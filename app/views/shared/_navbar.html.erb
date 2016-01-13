@@ -1,0 +1,31 @@
+<header class="navbar navbar-fixed-top">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+                <ul class="list-unstyled list-inline logo">
+                    <li>
+                      <%= link_to root_path do %>
+                      <image src="https://s3-us-west-1.amazonaws.com/goodlooks/logo.png", alt="GoodLooks Logo" >
+                      <% end %>
+                    </li>
+                    <li><%= link_to "About us", pages_about_path, class: 'logo-pro' %></li>            
+                    <li><%= link_to "Join Us!", new_user_registration_path, class: 'logo-pro' %></li>    
+                          <% if user_signed_in? %>
+                                
+                                <li><%= link_to "Account", edit_user_registration_path, class: 'logo-pro' %></li>
+
+                                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'logo-pro' %></li>
+
+                            <% else %>
+                              <li><%= link_to "Register or Log-in", new_user_registration_path, class: 'logo-pro' %></li>
+                            
+                            <% end %>    
+         </div>
+
+
+ 
+    </div>
+    </div>
+
+</header>
+

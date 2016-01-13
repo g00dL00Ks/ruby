@@ -1,0 +1,192 @@
+<section class="tab_section">
+    <div class="container">
+        <div class="row">
+ 
+
+<%= simple_form_for(@pro) do |f| %>
+  <%= f.error_notification %>
+              <div class="col-sm-12">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs navbar-nav navbar-right" role="tablist">
+                    <li role="presentation" class="active"><a href="#sk_news" aria-controls="sk_news" role="tab" data-toggle="tab">Basic Info</a></li>
+                    <li role="presentation"><a href="#sk_journal" aria-controls="sk_journal" role="tab" data-toggle="tab">Expertise</a></li>
+                    <li role="presentation"><a href="#sk_affirmation" aria-controls="sk_affirmation" role="tab" data-toggle="tab">Details</a></li>
+                    <li role="presentation"><a href="#sk_reflection" aria-controls="sk_reflection" role="tab" data-toggle="tab">Services</a></li>
+                </ul>
+
+      <div class="form-inputs">                 <!-- Tab panes -->
+                <div class="tab-content">
+                 
+                    <!-- BODY CONTENT FOR THE NEWS SECTION -->
+                    <div role="tabpanel" class="tab-pane active" id="sk_news">
+                        <br>
+                        <div class="section-title">
+                            <ul class="list-inline">
+                                <li class="base-title">about you and your background</li>
+                            </ul>
+                        </div>
+                        <br><br>
+
+
+    <%= f.input :name, placeholder: "What is your first name?" %>
+    <%= f.input :last_name, label: "What is your last name?" %>    
+    <%= f.input :city, label: "What city are you located in? (working on being a drop down for all cities)" %>    
+    <%= f.input :hometown, placeholder: "What is your hometown (city, state)?" %>
+    <%= f.input :quote, placeholder: "What is your favorite quote?" %>    
+    <%= f.input :author, placeholder: "Who said it?" %>    
+    <%= f.input :tip, placeholder: "What's your best tip to clients?" %>   
+
+    <%= f.input :description, placeholder: "Provide a description of your services" %>
+    <%= f.input :image, label: "Add your profile photo", :as => :file%>
+
+      </div>                      
+
+                    <!-- BODY CONTENT FOR THE JOURNAL SECTION -->
+                    <div role="tabpanel" class="tab-pane" id="sk_journal"> 
+                        <br>
+                        <div class="section-title">
+                            <ul class="list-inline">
+                                <li class="base-title">More about your expertise</li>
+                            </ul>
+                        </div>
+
+
+
+    <%= f.input :certifications, placeholder: "What certifications do you have that are relevant to the services you provide?" %>
+    <%= f.input :specialty, placeholder: "What do you consider to be your speciality?" %>
+
+<h3>How are you willing to work with your clientele?</h3>
+<%= f.input :loc_inperson_private, :as => :boolean , label: "In-person- In client's private space" %>
+<%= f.input :loc_inperson_public, :as => :boolean , label: "In-person - In a public space" %>
+<%= f.input :loc_inperson_yourspace, :as => :boolean , label: "In-person - In your office" %>
+<%= f.input :loc_virtual_short, :as => :boolean , label: "Virtual (video chat, phone, text message)- short duration (<30-minute sessions)" %>
+<%= f.input :loc_virtual_long, :as => :boolean , label: "Virtual (video chat, phone, text message)- long duration (>30-minute sessions)" %>
+
+<%= f.input :pre_work, label: "What type of pre-work do you request your client’s complete pre-work in advance of their sessions? " %>
+<%= f.input :cancellation, label: "What is your cancellation policy (fees charged, time windows to cancel)?" %>
+<h3>Please select the types of clients you typically work:</h3>
+<%= f.input :everyday, :as => :boolean , label: "Everyday" %>
+<%= f.input :execs, :as => :boolean , label: "Executives/ High Profile Professionals" %>
+<%= f.input :celebs, :as => :boolean , label: "Celebrities/ Socialites/ Royalty" %>
+<%= f.input :bridal, :as => :boolean , label: "Bridal / Special Events" %>
+<%= f.input :prenatal, :as => :boolean , label: "Prenatal / Postnatal" %>
+<%= f.input :petites, :as => :boolean , label: "Petites" %>
+<%= f.input :plus_size, :as => :boolean , label: "Plus-Size" %>
+<%= f.input :travelers, :as => :boolean , label: "Travelers / International" %>
+<%= f.input :men, :as => :boolean , label: "Men" %>
+<%= f.input :women, :as => :boolean , label: "Women" %>
+<%= f.input :lgbt, :as => :boolean , label: "LGBT" %>
+
+<h3>What is the typical age range of your clientele:</h3>
+<%= f.input :age_und20, :as => :boolean , label: "Under 20 years of age" %>
+<%= f.input :age_20_30, :as => :boolean , label: "20-30 year olds" %>
+<%= f.input :age_30_40, :as => :boolean , label: "30-40 year olds" %>
+<%= f.input :age_40_50, :as => :boolean , label: "40-50 year olds" %>
+<%= f.input :age_50_60, :as => :boolean , label: "50-60 year olds" %>
+<%= f.input :age_60over, :as => :boolean , label: "Over 60" %>
+<%= f.input :closet, :as => :boolean , label: "Closet cleanout / refresh" %>
+<%= f.input :personal_styling, :as => :boolean , label: "Personal styling (accompanied shopping or private purchases)" %>
+<%= f.input :personal_shopping, :as => :boolean , label: "Personal shopping" %>
+<%= f.input :commercial, :as => :boolean , label: "Commercial (editorial, film/tv, advertising, etc)" %>
+<%= f.input :bundle_offers, :as => :boolean , label: "Bundle offers / custom packages" %>
+<%= f.input :stylist_other, label: "Other (please specify):" %>
+<%= f.input :weight_loss, :as => :boolean , label: "Weight Loss" %>
+<%= f.input :weight_gain, :as => :boolean , label: "Weight Gain" %>
+<%= f.input :firming, :as => :boolean , label: "Firming/Toning" %>
+<%= f.input :bootcamp, :as => :boolean , label: "Bootcamp Style Training" %>
+<%= f.input :bodybuilding, :as => :boolean , label: "Bodybuilding" %>
+<%= f.input :endurance, :as => :boolean , label: "Endurance Training / Athletes & Marathon Training" %>
+<%= f.input :trainer_prenatal, :as => :boolean , label: "Prenatal / Postnatal Training" %>
+<%= f.input :recovery, :as => :boolean , label: "Recovery from illness/ injury" %>
+<%= f.input :nutrition_planning, :as => :boolean , label: "Nutrition Planning" %>
+<%= f.input :yoga, :as => :boolean , label: "Yoga" %>
+<%= f.input :pilates, :as => :boolean , label: "Pilates" %>
+<%= f.input :trainer_bundle, :as => :boolean , label: "Bundle offers / custom packages" %>
+<%= f.input :trainer_other, label: "Other" %>
+<%= f.input :nutrition_analysis, :as => :boolean , label: "Nutritional analysis" %>
+<%= f.input :meal_planning, :as => :boolean , label: "Meal Planning / Diet guidelines" %>
+<%= f.input :food_sensitivity, :as => :boolean , label: "Food Sensitivity Testing" %>
+<%= f.input :grocery, :as => :boolean , label: "Grocery Store Tour" %>
+<%= f.input :pantry, :as => :boolean , label: "Pantry Makeover" %>
+<%= f.input :supplement, :as => :boolean , label: "Supplement Recommendation" %>
+<%= f.input :body_comp, :as => :boolean , label: "Body Composition Testing" %>
+<%= f.input :nutritionist_bundle, :as => :boolean , label: "Bundle offers / custom packages" %>
+<%= f.input :nutritionist_other, label: "Other (please specify):" %>
+<%= f.input :transition, :as => :boolean , label: "Career Transition (new job, change jobs, return after absence, etc)" %>
+<%= f.input :interview, :as => :boolean , label: "Interview / Resume Coaching" %>
+<%= f.input :exec_coaching, :as => :boolean , label: "Executive Coaching / Leadership & Development" %>
+<%= f.input :lifestyle_coaching, :as => :boolean , label: "Lifestyle Coaching" %>
+<%= f.input :public_speaking, :as => :boolean , label: "Public Speaking / Communication / Networking" %>
+<%= f.input :dating, :as => :boolean , label: "Dating & Relationship" %>
+<%= f.input :time_mgmt, :as => :boolean , label: "Time Management / Productivity" %>
+<%= f.input :ADD_coaching, :as => :boolean , label: "ADD Coaching" %>
+<%= f.input :stress_mgmt, :as => :boolean , label: "Stress Management" %>
+<%= f.input :parenting, :as => :boolean , label: "Parenting Coaching" %>
+<%= f.input :spirituality, :as => :boolean , label: "Spirtuality" %>
+<%= f.input :coach_bundle, :as => :boolean , label: "Bundle offers / custom packages" %>
+<%= f.input :coach_other, label: "Other (please specify):" %>
+<%= f.input :q_enjoy, label: "#1. What do you enjoy most about your line of work?" %>
+<%= f.input :q_approach, label: "#2. How does your approach stand out?" %>
+<%= f.input :q_common, label: "#3. What is the most common question customers ask you and what is your answer?" %>
+
+                        <br><br>
+                    </div>
+
+                    <!-- BODY CONTENT FOR THE AFFIRMATION SECTION -->
+                    <div role="tabpanel" class="tab-pane" id="sk_affirmation">
+                        <br>
+                        <div class="section-title">
+                            <ul class="list-inline">
+                                <li class="base-title">details about yourself</li>
+
+                                <h3>Please add your social accounts you would like to link to</h3>
+    <%= f.input :instagram_handle, label: "What is your Instagram user name? Do not include the @ sign", placeholder: "user_name" %>    
+    <%= f.input :pinterest_link, label: "What is your Pinterest link?" %>    
+      <% if user_signed_in? %>
+        <% if current_user.level == 3 %>
+          <%= f.input :pinterest_handle, label: "What the Pinterest user name?", placeholder: "username" %>    
+        <% end %>
+       <% end %> 
+    <%= f.input :twitter_handle,label: "What is your Twitter name?", placeholder: "twitter_name" %>  
+    <%= f.input :facebook_page, label: "What is your Facebook page link?", placeholder: "https://www.facebook.com/YOUR_NAME" %>    
+    <%= f.input :linkedin_page, label: "What is your LinkedIn page?", placeholder: "https://www.linkedin.com/in/YOUR_NAME" %>    
+
+
+<%= f.input :paypal_email, label: "Paypal Email:" %>
+<%= f.input :phone, label: "Phone Number:" %>
+<%= f.input :alt_email, label: "Alternate Email (optional):" %>
+                            </ul>
+                        </div>
+                        <br><br>
+                    </div>
+                    <!-- AFFIRMATION SECTION END -->
+
+
+                    <!-- BODY CONTENT FOR THE REFLECTION SECTION -->
+                    <div role="tabpanel" class="tab-pane" id="sk_reflection">
+                        <br>
+                        <div class="section-title">
+                            <ul class="list-inline">
+                                <li class="base-title">Your Expertise</li>
+
+
+
+
+                            </ul>
+                        </div>
+                        <br><br>
+                    </div>
+                    <!-- REFLECTION SECTION END-->
+
+
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Save', class: 'btn btn-info' %>
+  </div>
+
+<% end %>
+</div>
+</div>
+</div>
+</section>
