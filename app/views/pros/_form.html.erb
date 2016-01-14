@@ -1,11 +1,7 @@
 <section class="tab_section">
     <div class="container">
         <div class="row">
- 
-
-<%= simple_form_for(@pro) do |f| %>
-  <%= f.error_notification %>
-              <div class="col-sm-12">
+            <div class="col-sm-12">
 
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs navbar-nav navbar-right" role="tablist">
@@ -15,7 +11,12 @@
                     <li role="presentation"><a href="#sk_reflection" aria-controls="sk_reflection" role="tab" data-toggle="tab">Services</a></li>
                 </ul>
 
-      <div class="form-inputs">                 <!-- Tab panes -->
+              <!-- Tab panes -->
+
+<%= simple_form_for(@pro) do |f| %>
+  <%= f.error_notification %>
+
+ <div class="form-inputs">   
                 <div class="tab-content">
                  
                     <!-- BODY CONTENT FOR THE NEWS SECTION -->
@@ -29,7 +30,7 @@
                         <br><br>
 
 
-    <%= f.input :name, placeholder: "What is your first name?" %>
+    <%= f.input :name, placeholder: "What is your first name?"%>
     <%= f.input :last_name, label: "What is your last name?" %>    
     <%= f.input :city, label: "What city are you located in? (working on being a drop down for all cities)" %>    
     <%= f.input :hometown, placeholder: "What is your hometown (city, state)?" %>
@@ -39,8 +40,7 @@
 
     <%= f.input :description, placeholder: "Provide a description of your services" %>
     <%= f.input :image, label: "Add your profile photo", :as => :file%>
-
-      </div>                      
+</div>
 
                     <!-- BODY CONTENT FOR THE JOURNAL SECTION -->
                     <div role="tabpanel" class="tab-pane" id="sk_journal"> 
@@ -50,7 +50,6 @@
                                 <li class="base-title">More about your expertise</li>
                             </ul>
                         </div>
-
 
 
     <%= f.input :certifications, placeholder: "What certifications do you have that are relevant to the services you provide?" %>
@@ -180,7 +179,7 @@
                     <!-- REFLECTION SECTION END-->
 
 
-
+                    
   <div class="form-actions">
     <%= f.button :submit, 'Save', class: 'btn btn-info' %>
   </div>
