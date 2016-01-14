@@ -84,12 +84,20 @@
 <%= f.input :age_40_50, :as => :boolean , label: "40-50 year olds" %>
 <%= f.input :age_50_60, :as => :boolean , label: "50-60 year olds" %>
 <%= f.input :age_60over, :as => :boolean , label: "Over 60" %>
-<%= f.input :closet, :as => :boolean , label: "Closet cleanout / refresh" %>
-<%= f.input :personal_styling, :as => :boolean , label: "Personal styling (accompanied shopping or private purchases)" %>
-<%= f.input :personal_shopping, :as => :boolean , label: "Personal shopping" %>
-<%= f.input :commercial, :as => :boolean , label: "Commercial (editorial, film/tv, advertising, etc)" %>
-<%= f.input :bundle_offers, :as => :boolean , label: "Bundle offers / custom packages" %>
-<%= f.input :stylist_other, label: "Other (please specify):" %>
+
+
+<% if current_user.stylist? %>
+<p>Tell us about your styling expertise.  Check all that apply.</p>
+    <%= f.input :closet, :as => :boolean , label: "Closet cleanout / refresh" %>
+    <%= f.input :personal_styling, :as => :boolean , label: "Personal styling (accompanied shopping or private purchases)" %>
+    <%= f.input :personal_shopping, :as => :boolean , label: "Personal shopping" %>
+    <%= f.input :commercial, :as => :boolean , label: "Commercial (editorial, film/tv, advertising, etc)" %>
+    <%= f.input :bundle_offers, :as => :boolean , label: "Bundle offers / custom packages" %>
+    <%= f.input :stylist_other, label: "Other (please specify):" %>
+<% end %>
+
+<% if current_user.trainer? %>
+<p>Tell us about your training expertise.  Check all that apply.</p>
 <%= f.input :weight_loss, :as => :boolean , label: "Weight Loss" %>
 <%= f.input :weight_gain, :as => :boolean , label: "Weight Gain" %>
 <%= f.input :firming, :as => :boolean , label: "Firming/Toning" %>
@@ -103,6 +111,10 @@
 <%= f.input :pilates, :as => :boolean , label: "Pilates" %>
 <%= f.input :trainer_bundle, :as => :boolean , label: "Bundle offers / custom packages" %>
 <%= f.input :trainer_other, label: "Other" %>
+<% end %>
+
+<% if current_user.health_coach? || current_user.dietician? ||  current_user.nutritionist? %>
+<p>Tell us about your nutrition expertise.  Check all that apply.</p>
 <%= f.input :nutrition_analysis, :as => :boolean , label: "Nutritional analysis" %>
 <%= f.input :meal_planning, :as => :boolean , label: "Meal Planning / Diet guidelines" %>
 <%= f.input :food_sensitivity, :as => :boolean , label: "Food Sensitivity Testing" %>
@@ -112,6 +124,10 @@
 <%= f.input :body_comp, :as => :boolean , label: "Body Composition Testing" %>
 <%= f.input :nutritionist_bundle, :as => :boolean , label: "Bundle offers / custom packages" %>
 <%= f.input :nutritionist_other, label: "Other (please specify):" %>
+<% end %>
+
+<% if current_user.career_coach? || current_user.life_coach? %>
+<p>Tell us about your career and life coaching expertise.  Check all that apply.</p>
 <%= f.input :transition, :as => :boolean , label: "Career Transition (new job, change jobs, return after absence, etc)" %>
 <%= f.input :interview, :as => :boolean , label: "Interview / Resume Coaching" %>
 <%= f.input :exec_coaching, :as => :boolean , label: "Executive Coaching / Leadership & Development" %>
@@ -125,6 +141,9 @@
 <%= f.input :spirituality, :as => :boolean , label: "Spirtuality" %>
 <%= f.input :coach_bundle, :as => :boolean , label: "Bundle offers / custom packages" %>
 <%= f.input :coach_other, label: "Other (please specify):" %>
+<% end %>
+
+<h1>Please answer a few questions about your approach<h1>
 <%= f.input :q_enjoy, label: "#1. What do you enjoy most about your line of work?" %>
 <%= f.input :q_approach, label: "#2. How does your approach stand out?" %>
 <%= f.input :q_common, label: "#3. What is the most common question customers ask you and what is your answer?" %>

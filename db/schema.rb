@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113053834) do
+ActiveRecord::Schema.define(version: 20160114195102) do
 
   create_table "pros", force: true do |t|
     t.string   "name"
@@ -107,6 +107,10 @@ ActiveRecord::Schema.define(version: 20160113053834) do
     t.text     "q_enjoy"
     t.text     "q_approach"
     t.text     "q_common"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "pros", ["user_id"], name: "index_pros_on_user_id"

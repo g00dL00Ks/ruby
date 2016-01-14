@@ -9,7 +9,7 @@
                       <% end %>
                     </li>
                     <li><%= link_to "About us", pages_about_path, class: 'logo-pro' %></li>            
-                    <li><%= link_to "Join Us!", new_user_registration_path, class: 'logo-pro' %></li>    
+                    <li><%= link_to "Join Us!", new_user_registration_path, "data-no-turbolink" => true, class: 'logo-pro' %></li>    
                           <% if user_signed_in? %>
                                 
                                 <li><%= link_to "Account", edit_user_registration_path, class: 'logo-pro' %></li>

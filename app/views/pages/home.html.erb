@@ -1,49 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Homepage</h1>
+<br>
 
-<a href="#" id="show_whatever">Show Whatever</a>
+	<% if user_signed_in? %>
+		<h3>Welcome <%= current_user.name %></h3> 
+		 	<% if current_user.level == 2 %>
+		 		<%= link_to "Access your profile", edit_pro_path(current_user.pro.id) %>
+			<% end %>	 	
+	<% end %>
+
+<br><br>
+
+<a href="#" id="show_whatever">Test javascript section</a>
 <div id="whatever" class="hidden">This text is supposed to be hidden until click</div>
 
-<h1>Sign-in</h1>
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-<h1>Sign-up</h1>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name, required: true, autofocus: true %>
-    <%= f.input :email, required: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-    <%= #f.select :level, options_for_select([['user', 1], ['pro', 2], ['admin', 3]]), prompt: "What's your type"
-    %></div>
- 
-    <%= f.input :level, as: :hidden, input_html: {value: '2'} %>
-
-     <h3>Please select the types of services do you provide</h3>
-    <%= f.input :trainer, :as => :boolean, label: "Personal Training" %>
-    <%= f.input :stylist, :as => :boolean, label: "Personal Fashion Stylist" %>
-    <%= f.input :dietician, :as => :boolean , label: "Dietician " %>
-    <%= f.input :nutritionist, :as => :boolean, label: "Nutritionist" %>
-    <%= f.input :health_coach, :as => :boolean , label: "Health / Nutrition Coach" %>
-    <%= f.input :career_coach, :as => :boolean, label: "Career Coach" %>
-    <%= f.input :life_coach, :as => :boolean, label: "Life Coach" %>
-
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
 

@@ -26,7 +26,7 @@ class ProsController < ApplicationController
     @pro.user_id = current_user.id
     respond_to do |format|
       if @pro.save
-        format.html { redirect_to "/pages/home", notice: 'Your account was successfully created.' }
+        format.html { redirect_to "/pages/home", notice: 'Thanks for submitting your info.  We will be in touch soon' }
         format.json { render :show, status: :created, location: @pro }
       else
         format.html { render :new }
