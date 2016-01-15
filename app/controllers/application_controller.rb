@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :health_coach
     devise_parameter_sanitizer.for(:sign_up) << :career_coach
     devise_parameter_sanitizer.for(:sign_up) << :life_coach
+    devise_parameter_sanitizer.for(:sign_up) << :stylist
 
     devise_parameter_sanitizer.for(:account_update) << :name
     devise_parameter_sanitizer.for(:account_update) << :level
@@ -25,6 +26,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :health_coach
     devise_parameter_sanitizer.for(:account_update) << :career_coach
     devise_parameter_sanitizer.for(:account_update) << :life_coach
+    devise_parameter_sanitizer.for(:account_update) << :stylist
 
   end
 
