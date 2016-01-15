@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :pros
+
+
+  resources :pros do
+      resources :services
+  end
 
   get 'pages/home'
 

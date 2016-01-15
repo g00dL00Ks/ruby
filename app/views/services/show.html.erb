@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<% @services.each do |service| %>
+    <tr>
+
+      <td class="center"><%= service.title %></td><br>
+      <td class="center"><%= service.description %></td><br>
+      <td class="center"><%= service.price %></td><br>
+      <td class="center"><%= service.length %> mins</td><br>
+
+    </tr>
+  <% end %>
+
