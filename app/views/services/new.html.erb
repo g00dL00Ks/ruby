@@ -1,14 +1,14 @@
 <h1>New service</h1>
 
 <%= render 'form' %>
-
-
 	<% if user_signed_in? %>
 		<h3>Welcome <%= current_user.name %></h3> 
 		 	<% if current_user.level == 2 %>
 		 		<%= link_to "Review your profile", edit_pro_path(current_user.pro.id) %><br>
-		 		<%= link_to "See your service offering", service_path(current_user.pro.id) %><br>
-		 		<%= link_to "Add a new services", new_service_path(current_user.pro.id) %>
+		 		<%= link_to "See your service offering", pro_services_path(current_user.pro.id)
+		 		 %><br>
+		 		<%= #link_to "Add a new services", new_pro_service_path(current_user.pro.id) 
+		 		%>
 	 		
 			<% end %>	 	
 	<% end %>

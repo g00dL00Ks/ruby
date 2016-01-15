@@ -28,7 +28,15 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.pro_id = @pro.id
     @service.save
-
+    respond_to do |format|
+      if @service.save
+        format.html { redirect_to root_path, alert: 'Service was successfully created.' }
+        format.json { render :show, status: :created, location: @service}
+      else
+        format.html { render :new }
+        format.json { render json: @service.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
