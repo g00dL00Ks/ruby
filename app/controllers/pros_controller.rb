@@ -87,6 +87,7 @@ class ProsController < ApplicationController
         :supplement, :body_comp, :nutritionist_bundle, :nutritionist_other, :transition, :interview, 
         :exec_coaching, :lifestyle_coaching, :public_speaking, :dating, :time_mgmt, :ADD_coaching, 
         :stress_mgmt, :parenting, :spirituality, :coach_bundle, :coach_other, :q_enjoy, :q_approach, :q_common,
-        service_attributes: [:title, :description, :length, :price, :pro_id])
+        service_attributes: [:title, :description, :length, :price, :pro_id],
+        photo_attributes: [:image, :title])
     end
 end
