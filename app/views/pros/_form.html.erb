@@ -260,7 +260,9 @@
                                 <% end %>                            
                             </div>
                      <!--  REFLECTION SECTION END-->
-<br>            
+<br> 
+
+    <%= f.input :review, :as => :boolean , label: "Once you've completed all information, check here to have the GoodLooks team review your profile.  If you want to come back to finish the questions, leave this button unchecked." %>           
   <div class="form-actions">
     <%= f.submit "Save your profile", class: 'f_bold btn btn-default btn-theme btn-lg' %>
     </div>

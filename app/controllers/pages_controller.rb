@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+	
   def home
   	@pro = Pro.all
   end

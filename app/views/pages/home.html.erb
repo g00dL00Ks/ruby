@@ -1,32 +1,121 @@
-<h1>Homepage</h1>
-<br>
+<div class="jumbotron">
+  <div class="container-fluid">
+		<div class="col-sm-6 col-md-7">
+			<h1>A NEW WAY TO SHINE<br>
+			FROM THE INSIDE OUT.</h1>
+			<p>Launching in early 2016-GoodLooks is a marketplace<br>
+			of high-quality, vetted experts to help you look, feel,<br>
+			and be your best.</p>
+		</div>
+  </div>
+</div>
 
+
+
+<section id="experience">
+<div class="container">
+<div class="row">
+<h2>The GoodLooks Experience</h2>
 	<% if user_signed_in? %>
-		<h3>Welcome <%= current_user.name %></h3> 
-		 	<% unless current_user.pro.id.nil? %>
-		 		<%= image_tag current_user.pro.image.url(:medium) %><br>
-		 		<%= link_to "View your profile", pro_path(current_user.pro.id) %><br>
-		 		<%= link_to "Edit your profile", edit_pro_path(current_user.pro.id) %><br>
-		 		 
-		 		<%= link_to "Add a service", new_pro_service_path(current_user.pro.id)
-		 		 %><br>
-
-		 		<%= link_to "Add images to your portfolio", new_photo_path
-		 		 %><br>
-
-		 		<%= link_to "profile", pros_profile_path(current_user.pro.id)
-		 		 %><br>
-
-		 		<%= #link_to "See all my services", pro_service_path(current_user.pro.id)
-		 		%>
-	 		
-			<% end %>	 	
+		<h2>Welcome <%= current_user.name %>! </h2>  	
 	<% end %>
 
-<br><br>
+<div class="col-sm-4 col-md-4">
+<img src="https://s3-us-west-1.amazonaws.com/goodlooks/advice.png" alt="GoodLooks Expert Advice" class="img-responsive center">
+<h3>Answer &amp; Advice</h3>
+<p>Our "Ask an Expert" tool lets Users Submit their questions to specialists and community Want to keep Private? No problem-post anonymously. We're here to make it easy for you to access experts and receive custom-tailored, quality advice.</p>
+</div>
+<div class="col-sm-4 col-md-4">
+<img src="https://s3-us-west-1.amazonaws.com/goodlooks/mark.png" alt="GoodLooks 15 for $15 program" class="img-responsive center">
+<h3>15 For $15</h3>
+<p>Have some experts in mind, but unsure of who to choose? Our “15 for 15” program is a cost effective way do you to decide who right for you. Get 15-minutes with any expert For $15 so you can get comfortable with the right expert for you without spending a Fortune!</p>
+</div>
+<div class="col-sm-4 col-md-4">
+<img src="https://s3-us-west-1.amazonaws.com/goodlooks/virtual.png" alt="GoodLooks In Person Services" class="img-responsive center">
+<h3>Virtual &amp; In-person</h3>
+<p>We know that experts are not alweays available in your area. So we offer virtual services so you can access anyone from anywhere. Prefer to work, with someone in-person? We also have professionals that offer physical services in-home or in-public spaces.</p>
+</div>
+<div class="col-sm-12 col-md-12" align="center">
+	<button type="button" class="btn btn-sign" >
+    	<%= link_to "Sign-Up", new_user_registration_path, "data-no-turbolink" => true %>
+      </button>
+</div>
 
-<a href="#" id="show_whatever">Test javascript section</a>
-<div id="whatever" class="hidden">This text is supposed to be hidden until click</div>
+</div>
+</div>
+</section>
+
+
+<section id="sugar">
+<div class="container">
+<div class="row">
+<h4>As Seen In</h4>
+<div class="col-sm-12 col-md-12" align="center"><img src="https://s3-us-west-1.amazonaws.com/goodlooks/pop.png" alt="GoodLooks on PopSugar" class="img-responsive"></div>
+</div>
+</div>
+</section>
+
+<section id="why-use">
+<div class="container">
+<div class="row">
+<h2>Why Use Goodlooks</h2>
+<p>Lorem lpsume is demo Font used for many porpuse. We used For our design you will like our design,ourworks.<br>
+We need more. We want to give you best service ever. I hope you will likeour hjob.</p>
+<div class="col-sm-12 col-md-12 photo"><img src="https://s3-us-west-1.amazonaws.com/goodlooks/photo.jpg" alt="Why use GoodLooks" class="img-responsive center"></div>
+
+<div class="col-sm-12 col-md-12 use-middle">
+<div class="col-sm-6 col-md-offset-1 col-md-5 box">
+<div class="number"><h5>1</h5></div>
+<h3>BREADTH OF EXPERTS</h3>
+<p>Our platform has a wide varity of experts ranging from style to ﬁtness to nutrition to career know- how. We screen and vet all professional to ensure you receive qualiﬁed, top-tier advice.</p>
+</div>
+
+<div class="col-sm-6  col-md-offset-1 col-md-5 box">
+<div class="number"><h5>2</h5></div>
+<h3>EASY BOOKING &amp; SCHEDULING</h3>
+<p>We are making transacting with our professionals easier than ever with up-to-date calender availablity and payment functionality ensuring all schiduling and payments occur in a secure, reliable environment.</p>
+</div>
+
+<div class="col-sm-6 col-md-offset-1 col-md-5 box">
+<div class="number"><h5>3</h5></div>
+<h3>LESS LEGWORK &amp; GUESWORK</h3>
+<p>We offer advanced search and discovery tools and standardized professional proﬁles,so you can easily compare and ﬁnd right professional for you!</p>
+</div>
+
+<div class="col-sm-6 col-md-offset-1 col-md-5 box">
+<div class="number"><h5>4</h5></div>
+<h3>PERSONALIZED INSPIRATION</h3>
+<p>Through our “Ask an Expert”,”Share Some Wisdom”, and our Reﬂections Blog we are Focused on delivering you professional advice and guidance to help keep you insppired and motivated so you can achieve your goals.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="promise">
+<div class="container">
+<div class="row">
+<h2>Our Promise</h2>
+<p>At GoodLooks, our promise is to help you shine from the inside out. We take a holistis<br> approach to a better you, and we're the first in our industry to focus on it this way.</p>
+<p>True beauty comes from true confidence.<br>
+Feeling your best looks good on you.</p>
+</div>
+</div>
+</section>
+
+<section id="tomorrow">
+<div class="container">
+<div class="row">
+<h1>Tomorrow Is calling.  Own it.</h1>
+<div class="col-sm-12 col-md-12" align="center">
+	<button type="button" class="btn btn-sign" >
+    	<%= link_to "Sign-Up", new_user_registration_path, "data-no-turbolink" => true %>
+      </button>
+  </div>
+</div>
+</div>
+</section>
 
 
 
