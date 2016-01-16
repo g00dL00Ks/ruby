@@ -3,12 +3,20 @@
 
 	<% if user_signed_in? %>
 		<h3>Welcome <%= current_user.name %></h3> 
-		 	<% if current_user.level == 2 %>
+		 	<% unless current_user.pro.id.nil? %>
 		 		<%= image_tag current_user.pro.image.url(:medium) %><br>
-		 		<%= link_to "Review your profile", edit_pro_path(current_user.pro.id) %><br>
-		 		<%= link_to "See your service offering", pro_services_path(current_user.pro.id)
+		 		<%= link_to "View your profile", pro_path(current_user.pro.id) %><br>
+		 		<%= link_to "Edit your profile", edit_pro_path(current_user.pro.id) %><br>
+		 		 
+		 		<%= link_to "Add a service", new_pro_service_path(current_user.pro.id)
 		 		 %><br>
-		 		<%= #link_to "Add a new services", new_pro_service_path(current_user.pro.id) 
+
+
+
+		 		<%= link_to "profile", pros_profile_path(current_user.pro.id)
+		 		 %><br>
+
+		 		<%= #link_to "See all my services", pro_service_path(current_user.pro.id)
 		 		%>
 	 		
 			<% end %>	 	

@@ -1,6 +1,8 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
   before_action :set_pro
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
 
   respond_to :html
 
@@ -11,8 +13,10 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @services = Service.all.where(pro_id: current_user.pro.id)
+    #@services = Service.find(params[:id])
+    #@services = Service.all    
 
+    #@services = Service.where(pro_id: current_user.pro.id)
   end
 
   def new
@@ -26,7 +30,7 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
-    @service.pro_id = @pro.id
+    @service.pro_id = current_user.pro.id
     @service.save
     respond_to do |format|
       if @service.save

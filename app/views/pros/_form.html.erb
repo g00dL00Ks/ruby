@@ -184,10 +184,9 @@
                                         <%= f.input :personal_shopping, :as => :boolean , label: "Personal shopping" %>
                                         <%= f.input :commercial, :as => :boolean , label: "Commercial (editorial, film/tv, advertising, etc)" %>
                                         <%= f.input :bundle_offers, :as => :boolean , label: "Bundle offers / custom packages" %>
-                                    <% end %>
                                 </div>
                                 </div>
-
+                            <% end %>
 
                                 <% if current_user.trainer? %>
                                     <br>
@@ -209,10 +208,9 @@
                                     <%= f.input :yoga, :as => :boolean , label: "Yoga" %>
                                     <%= f.input :pilates, :as => :boolean , label: "Pilates" %>
                                     <%= f.input :trainer_bundle, :as => :boolean , label: "Bundle offers / custom packages" %>
-                                  <% end %>
                                   </div>  
                                   </div>                                     
-
+                                  <% end %>
 
                                 <% if current_user.health_coach? || current_user.dietician? ||  current_user.nutritionist? %>
                                     <br>
@@ -231,14 +229,13 @@
                                         <%= f.input :supplement, :as => :boolean , label: "Supplement Recommendation" %>
                                         <%= f.input :body_comp, :as => :boolean , label: "Body Composition Testing" %>
                                         <%= f.input :nutritionist_bundle, :as => :boolean , label: "Bundle offers / custom packages" %>
-                                    <% end %>
                                   </div>                                  
                                   </div>     
+                                    <% end %>
 
-
+                                <% if current_user.career_coach? || current_user.life_coach? %>
                                     <br>
                                     <p class="fm">Tell us about your career and life coaching expertise.  Check all that apply.</p>
-                                <% if current_user.career_coach? || current_user.life_coach? %>
                                 <div class="row">
                                         <div class="col-xs-4 col-sm-4">      
                                             <%= f.input :transition, :as => :boolean , label: "Career Transition (new job, change jobs, return after absence, etc)" %>
@@ -258,8 +255,9 @@
                                             <%= f.input :spirituality, :as => :boolean , label: "Spirtuality" %>
                                             <%= f.input :coach_bundle, :as => :boolean , label: "Bundle offers / custom packages" %>
                                         </div>
-                                <% end %>
+
                             </div>
+                                <% end %>                            
                             </div>
                      <!--  REFLECTION SECTION END-->
 <br>            

@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :pro, dependent: :destroy
-   
+
   validates :name, presence: true
+
   # need to add a validation that the user selects at least one area of expertise
 
 end

@@ -1,5 +1,5 @@
 class ProsController < ApplicationController
-  before_action :set_pro, only: [:show, :edit, :update, :destroy]
+  before_action :set_pro, only: [:show, :edit, :update, :destroy, :profile]
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 
@@ -11,8 +11,9 @@ class ProsController < ApplicationController
   end
 
   def show
-    respond_with(@pro)
-  end
+ 
+   @services = Service.where(pro_id: @pro.id).order("created_at DESC")
+   end
 
   def new
     @pro = Pro.new
@@ -23,8 +24,13 @@ class ProsController < ApplicationController
 
   def edit
     @pro.services.build
+  end
 
+  def profile
+  #  @services = Service.where(pro_id: @pro.id).order("created_at DESC")
   
+   # @services = Service.where("pro_id = '#{@pro_id}'")
+
   end
 
   def create
@@ -32,7 +38,7 @@ class ProsController < ApplicationController
     @pro.user_id = current_user.id
     respond_to do |format|
       if @pro.save
-        format.html { redirect_to "/pages/home", notice: 'Thanks for submitting your info.  We will be in touch soon' }
+        format.html { redirect_to "/pages/confirm", notice: 'Thanks for submitting your profile.  Next we need you to add services you offer' }
         format.json { render :show, status: :created, location: @pro }
       else
         format.html { render :new }
@@ -43,8 +49,16 @@ class ProsController < ApplicationController
 
   def update
     @pro.update(pro_params)
-    respond_with(@pro)
-  end
+        respond_to do |format|
+      if @pro.save
+        format.html { redirect_to "/pages/home", notice: 'Thanks for updating your profile' }
+        format.json { render :show, status: :created, location: @pro }
+      else
+        format.html { render :new }
+        format.json { render json: @pro.errors, status: :unprocessable_entity }    
+      end
+      end 
+            end 
 
   def destroy
     @pro.destroy
