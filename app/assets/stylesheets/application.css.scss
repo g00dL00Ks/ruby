@@ -7,13 +7,13 @@
 
 @font-face {
     font-family: 'Brandon-bold';
-    src: url('BrandonGrotesque-Bold.otf') format('opentype');
+    src: font-url('BrandonGrotesque-Bold.otf') format('opentype');
 
 }
 
 @font-face {
     font-family: 'Brandon-light';
-    src: url('BrandonGrotesque-Light.otf') format('opentype');
+    src: font-url('BrandonGrotesque-Light.otf') format('opentype');
 }
 
 home .jumbotron {
