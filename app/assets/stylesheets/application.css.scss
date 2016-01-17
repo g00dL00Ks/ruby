@@ -7,18 +7,18 @@
 
 @font-face {
     font-family: 'Brandon-bold';
-    src: font-url('BrandonGrotesque-Bold.otf') format('opentype');
+    src: url('BrandonGrotesque-Bold.otf') format('opentype');
 
 }
 
 @font-face {
     font-family: 'Brandon-light';
-    src: font-url('BrandonGrotesque-Light.otf') format('opentype');
+    src: url('BrandonGrotesque-Light.otf') format('opentype');
 }
 
 .jumbotron {
   background-image: url('https://s3-us-west-1.amazonaws.com/goodlooks/Jumbo1.jpg');
-  min-height: 500px; 
+  min-height: 800px;
 }
 
 
@@ -163,7 +163,7 @@ footer a {
  color: #6f7070 ;
  }
 
-.carousel-caption { color: #fff; left: 7%; right: 7%; bottom: 26%; text-align: left; text-shadow: none; }
+.carousel-caption { color: #fff; left: 7%; right: 7%; bottom: 10%; text-align: left; text-shadow: none; }
 .carousel-caption h1 { color: #fff; font-family: "Brandon-bold"; font-size: 60px; text-transform: uppercase; }
 .carousel-caption h3 { color: #fff; font-family: "Brandon-light"; font-size: 28px; margin: 100px 0px 38px; text-align: center; text-transform: uppercase; }
 .carousel-caption p { color: #fff; font-family: "Brandon-light"; font-size: 28px; line-height: normal; }
