@@ -10,14 +10,7 @@
               </div>
 
       <% if current_user.level == 2 %>
-        <%= link_to "View your profile", pro_path(current_user.pro.id) %><br>
-        <%= link_to "Edit your profile", edit_pro_path(current_user.pro.id) %><br>
-        <%= link_to "Add a service", new_pro_service_path(current_user.pro.id)
-         %><br>
-        <%= link_to "Add images to your portfolio", new_photo_path
-         %><br>
-        <%= link_to "profile", pros_profile_path(current_user.pro.id)
-         %><br>
+        <%= link_to "View your profile info", pro_path(current_user.pro.id) %><br>
       <% end %>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -36,6 +29,16 @@
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
+
+                <br>
+        <b>Change your city</b>
+    <%= f.input :city, required: true, input_html: {id: "locality"} %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+
         
         <br>
         <b>Change your password</b>
@@ -78,6 +81,7 @@
 <br><br>
 <%= link_to "Back to home", root_path %>
 
+<%= render "users/script_city_autocomplete" %>
 </div>
 </div>
 </div>

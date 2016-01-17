@@ -1,4 +1,7 @@
 class PhotosController < ApplicationController
+  #before_action :set_pro
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @photos = Photo.order('created_at')
   end
@@ -11,7 +14,7 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
     if @photo.save
       flash[:success] = "The photo was added!"
-      redirect_to root_path
+      redirect_to pro_path(current_user.pro.id)
     else
       render 'new'
     end

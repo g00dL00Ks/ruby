@@ -3,12 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+
  before_filter :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:sign_up) << :city
     devise_parameter_sanitizer.for(:sign_up) << :level
     devise_parameter_sanitizer.for(:sign_up) << :trainer
     devise_parameter_sanitizer.for(:sign_up) << :dietician
@@ -19,6 +21,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :stylist
 
     devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:account_update) << :city
     devise_parameter_sanitizer.for(:account_update) << :level
     devise_parameter_sanitizer.for(:account_update) << :trainer
     devise_parameter_sanitizer.for(:account_update) << :dietician
@@ -38,4 +41,13 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_registration_path, alert: 'Please register or sign-in'
     end
   end
+
+  private
+
+    def set_search
+      @q = Pro.ransack(@params)
+    end
+
+
+    
 end

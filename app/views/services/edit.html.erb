@@ -1,6 +1,30 @@
-<h1>Editing service</h1>
+<section class="tab_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+            	<br>
+
+<div class="row">
+<h3>Update Service</h3>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @service %> |
-<%= link_to 'Back', services_path %>
+<div class="col-xs-4 col-sm-4 col-md-offset-2">
+
+<img src="https://s3-us-west-1.amazonaws.com/goodlooks/site/Services.jpg" alt="GoodLooks Add a service" class="img-responsive center">
+</div>
+
+</div>
+
+
+
+
+      <% if current_user.level == 2 %>
+        <%= link_to "Back to Profile Summary", pro_path(current_user.pro.id) %><br>
+      <% end %>
+      <br><br>
+</div>
+</div>
+
+</div>
+</section>

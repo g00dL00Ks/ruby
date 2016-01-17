@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   has_one :pro, dependent: :destroy
 
-  validates :name, presence: true
+  validates :name, :city, presence: true
+
 
   # need to add a validation that the user selects at least one area of expertise
 

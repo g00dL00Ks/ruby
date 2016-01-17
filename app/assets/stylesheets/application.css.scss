@@ -16,11 +16,16 @@
     src: url('BrandonGrotesque-Light.otf') format('opentype');
 }
 
-.jumbotron {
+home .jumbotron {
   background-image: url('https://s3-us-west-1.amazonaws.com/goodlooks/Jumbo1.jpg');
   min-height: 800px;
 }
 
+
+info .jumbotron {
+  background-image: url('https://s3-us-west-1.amazonaws.com/goodlooks/site/iStock_000023077780_Medium.jpg');
+  min-height: 800px;
+}
 
 body {
   padding-top: 51px;
@@ -128,6 +133,15 @@ header a {
  }
 
   .btn-sign a {
+ color: white; 
+ }
+
+.btn-theme a:hover {
+  color: white; 
+  text-decoration: none;
+ }
+
+  .btn-theme a {
  color: white; 
  }
 
@@ -480,6 +494,11 @@ section{
     color: #61bfcc;
 }
 
+.upcoming-evets {
+    background-color: #dce4e6;
+}
+
+
 .upcoming-evets a:hover{
     color: #61bfcc;
     text-decoration: underline #e2f86d;
@@ -571,6 +590,9 @@ table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .ta
 
 .tab_section .tab-content{
     margin-top: 55px !important;
+}
+.tab_section {
+    background-color: #dce4e6;
 }
 
 .tab_section .navbar-right{

@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   get 'pages/about'
   get 'pages/confirm'
-
+  get 'pages/mission'
+  get 'pages/info'
+  
   get 'pros/profile'
 
   root 'pages#home'

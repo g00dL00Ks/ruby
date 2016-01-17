@@ -1,15 +1,71 @@
-<p id="notice"><%= notice %></p>
+<section class="tab_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
 
-<p style="margin-top: 20px;">
-  <strong>Name:</strong>
-  <%= @pro.name %>
-</p>
+				<div class="base-container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="section-title">
+                                <ul class="list-inline">
+									<li class="base-title"><%= @pro.name %>, review and edit all your profile information here</li>
+                                </ul>
+                            </div>
 
-<%= image_tag(@pro.image) %>
+                        </div>
+                    </div>							
 
-<option selected value="Select a service">Select a service</option>
-<% @services.each do |service| %>
-    <p>Service: <%= service.title %></p>
-<% end %>
+                    <div class="row" style="padding: 5% 0%">
+            	    <p id="notice"><%= notice %></p>
+                        <div class="col-sm-4">
+							<h3>Your description</h3>
+							<p><%= @pro.description %></p>
+							<br>                        	
+							<b><p>Your profile image</p></b>
+							<%= image_tag(@pro.image) %>
+							<br>
+                            <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
+                              <%= link_to "Edit Profile info", edit_pro_path(current_user.pro.id), "data-no-turbolink" => true %>
+                            </button>
+                        </div>
 
 
+                        <div class="col-sm-4">
+							<h3>Services you offer</h3>
+								<% @services.each do |service| %>
+    								<p><b>Service: <%= service.title %></p></b>
+    								<p>Description: <%= service.description %></p>
+    								<p>Length: <%= service.length %> mins</p>
+    								<p>Price: <%= number_to_currency(service.price) %></p>      
+    								<p><%= link_to 'Edit Service', edit_pro_service_path(service, current_user.pro.id) %></p>
+    								<br>
+								<% end %>
+                            <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
+                               <%= link_to "Add another service", new_pro_service_path(current_user.pro.id), "data-no-turbolink" => true %>
+                            </button>
+                        </div>
+
+                        <div class="col-sm-4">
+							<h3>Portfolio photos</h3>
+								<p>Add pictures of you and/or your work to give your clients a better understanding of your approach</p>	
+								<% @photos.each do |photo| %>
+    								<p><%= image_tag(photo.image.url) %></p>
+								<% end %>
+								<br>
+                            <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
+                               <%= link_to "Add a photo", new_photo_path(current_user.pro.id), "data-no-turbolink" => true %>
+                            </button>
+                        </div>
+
+						<div class="row" style="padding: 5% 0%">
+                        	<div class="col-sm-10 col-md-offset-1">
+<br><br>                        		
+								<h3>GoodLooks will be launching your complete profile page shortly!  You'll receive an email notification with the full details soon.</h3>
+							</div>
+						</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

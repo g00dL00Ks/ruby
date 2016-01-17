@@ -1,15 +1,32 @@
-<h1>New service</h1>
+<section class="tab_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+            	<br>
+
+<div class="row">
+<% if user_signed_in? %>
+<h3><%= current_user.name %>, add a service to your profile</h3>
+	<p>Please add 2-4 service packages that you offer.  Our customers like to understand what will be involved in booking with you.</p>
+<% end %>	 	
+<br>
 
 <%= render 'form' %>
-	<% if user_signed_in? %>
-		<h3>Welcome <%= current_user.name %></h3> 
-		 	<% if current_user.level == 2 %>
-		 		<%= link_to "Review your profile", edit_pro_path(current_user.pro.id) %><br>
-		 		<%= link_to "See your service offering", pro_services_path(current_user.pro.id)
-		 		 %><br>
-		 		<%= #link_to "Add a new services", new_pro_service_path(current_user.pro.id) 
-		 		%>
-	 		
-			<% end %>	 	
-	<% end %>
 
+<div class="col-xs-4 col-sm-4 col-md-offset-2">
+
+<img src="https://s3-us-west-1.amazonaws.com/goodlooks/site/Services.jpg" alt="GoodLooks Add a service" class="img-responsive center">
+</div>
+
+</div>
+      <% if current_user.level == 2 %>
+        <%= link_to "Back to Profile Summary", pro_path(current_user.pro.id) %><br>
+      <% end %>
+      <br><br>
+
+</div>	
+
+</div>
+</div>
+
+</section>

@@ -1,6 +1,7 @@
 <section class="upcoming-evets">
     <div class="container">
         <div class="row">
+            <div class="col-sm-12">
           <div class="col-sm-12">
             <div class="base-container">
               <div class="section-title">
@@ -23,9 +24,13 @@
  
     <%= f.input :name, required: true, autofocus: true %>
     <%= f.input :email, required: true %>
+    <%= f.input :city, required: true, input_html: {id: "locality"} %>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
     <%= f.input :password, required: true, placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
-    <%= f.input :level, as: :hidden, input_html: {value: '2'} %>
+
     <%= #f.select :level, options_for_select([['user', 1], ['pro', 2], ['admin', 3]]), prompt: "What's your type"
     %>
  </div>
@@ -43,6 +48,7 @@
     <%= f.input :health_coach, :as => :boolean , label: "Health / Nutrition Coach" %>
     <%= f.input :career_coach, :as => :boolean, label: "Career Coach" %>
     <%= f.input :life_coach, :as => :boolean, label: "Life Coach" %>
+    <%= f.input :level, as: :hidden, input_html: {value: '2'} %>
   </div>
   </div>
   </div>
@@ -52,7 +58,9 @@
     </div>
   </div>
 <% end %>
+
+<%= render "users/script_city_autocomplete" %>
     </div>
     </div>
-</div>
+</div>  
 </section>

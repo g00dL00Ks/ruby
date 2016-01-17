@@ -22,6 +22,8 @@ class ServicesController < ApplicationController
   def new
     @service = Service.new
 
+   # @services = Service.where(pro_id: @current_user.pro.id).order("created_at DESC")    
+
 
   end
 
@@ -34,7 +36,7 @@ class ServicesController < ApplicationController
     @service.save
     respond_to do |format|
       if @service.save
-        format.html { redirect_to root_path, alert: 'Service was successfully created.' }
+        format.html { redirect_to pro_path(current_user.pro.id), alert: 'Service was successfully created.' }
         format.json { render :show, status: :created, location: @service}
       else
         format.html { render :new }
@@ -45,7 +47,15 @@ class ServicesController < ApplicationController
 
   def update
     @service.update(service_params)
-    respond_with(@service)
+    respond_to do |format|
+      if @service.save
+        format.html { redirect_to pro_path(current_user.pro.id), alert: 'Service was successfully updated.' }
+        format.json { render :show, status: :created, location: @service}
+      else
+        format.html { render :new }
+        format.json { render json: @service.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy

@@ -13,6 +13,9 @@ class ProsController < ApplicationController
   def show
  
    @services = Service.where(pro_id: @pro.id).order("created_at DESC")
+
+   @photos = Photo.where(pro_id: @pro.id).order("created_at DESC")
+
    end
 
   def new
@@ -38,7 +41,7 @@ class ProsController < ApplicationController
     @pro.user_id = current_user.id
     respond_to do |format|
       if @pro.save
-        format.html { redirect_to "/pages/confirm", notice: 'Thanks for submitting your profile.  Next we need you to add services you offer' }
+        format.html { redirect_to pro_path(current_user.pro.id), notice: 'Thanks for saving your.  Please complete the remainder of your profile' }
         format.json { render :show, status: :created, location: @pro }
       else
         format.html { render :new }
@@ -51,7 +54,7 @@ class ProsController < ApplicationController
     @pro.update(pro_params)
         respond_to do |format|
       if @pro.save
-        format.html { redirect_to "/pages/home", notice: 'Thanks for updating your profile' }
+        format.html { redirect_to pro_path(current_user.pro.id), notice: 'Thanks for updating your profile.  Update other info here if needed' }
         format.json { render :show, status: :created, location: @pro }
       else
         format.html { render :new }
