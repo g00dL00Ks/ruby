@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p style="margin-top: 20px;">
   <strong>Name:</strong>
   <%= @pro.name %>
 </p>
 
+<%= image_tag(@pro.image) %>
 
-                                      <option selected value="Select a service">Select a service</option>
-                                      <% @services.each do |service| %>
-                                          <p>Service: <%= service.title %></p>
-                                      <% end %>
+<option selected value="Select a service">Select a service</option>
+<% @services.each do |service| %>
+    <p>Service: <%= service.title %></p>
+<% end %>
 
 
