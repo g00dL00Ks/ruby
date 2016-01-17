@@ -13,7 +13,7 @@
                             </div>
 
                         </div>
-                    </div>							
+                    </div>		
 
                     <div class="row" style="padding: 5% 0%">
             	    <p id="notice"><%= notice %></p>
@@ -22,7 +22,7 @@
 							<p><%= @pro.description %></p>
 							<br>                        	
 							<b><p>Your profile image</p></b>
-							<%= image_tag(@pro.image) %>
+							<%= image_tag @pro.image(:thumb) %>
 							<br>
                             <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
                               <%= link_to "Edit Profile info", edit_pro_path(current_user.pro.id), "data-no-turbolink" => true %>
