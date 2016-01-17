@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get 'pages/confirm'
   get 'pages/mission'
   get 'pages/info'
+  get 'pages/terms'
+  get 'pages/privacy'
+
   
   get 'pros/profile'
 
