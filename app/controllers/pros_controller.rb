@@ -22,6 +22,7 @@ class ProsController < ApplicationController
     @pro = Pro.new
     @pro.user_id = current_user.id
     @pro.services.build
+    @pro.photos.build
 
   end
 
