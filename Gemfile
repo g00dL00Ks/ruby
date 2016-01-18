@@ -37,7 +37,6 @@ gem 'devise'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'annotate', group: :development
 gem 'quiet_assets', group: :development
-gem 'mailboxer'
 gem 'ransack'
 gem "figaro"
 gem 'aws-sdk', '>= 2.0.0'
