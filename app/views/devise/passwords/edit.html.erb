@@ -10,7 +10,7 @@
                 </ul>
               </div>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }, :class => "form-control") do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :reset_password_token, as: :hidden %>

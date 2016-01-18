@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  resources :elists
+
+  resources :contacts
+
   resources :pros do
       resources :services
   end

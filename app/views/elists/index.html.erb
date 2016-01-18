@@ -1,0 +1,29 @@
+<h1>Listing elists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>City</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @elists.each do |elist| %>
+      <tr>
+        <td><%= elist.name %></td>
+        <td><%= elist.email %></td>
+        <td><%= elist.city %></td>
+        <td><%= link_to 'Show', elist %></td>
+        <td><%= link_to 'Edit', edit_elist_path(elist) %></td>
+        <td><%= link_to 'Destroy', elist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Elist', new_elist_path %>
