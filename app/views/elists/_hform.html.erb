@@ -1,0 +1,31 @@
+
+<%= simple_form_for(@elist, :class => "form-control") do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="form-group col-sm-6">
+    <%= f.input :name, placeholder: "Your name*", label: '&nbsp;'.html_safe, :input_html => {style: 'height:64px;'} %>
+    </div>
+
+    <div class="form-group col-sm-6">
+    <%= f.input :email, placeholder: "Your email*", label: '&nbsp;'.html_safe, :input_html => {style: 'height:64px;'}  %>
+    </div>
+
+    <div class="form-group col-sm-12">
+    <%= f.input :city, input_html: {id: "locality"}, placeholder: "Your city*", label: '&nbsp;'.html_safe%>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+    </div>    
+  </div>
+
+	<br>
+  <div class="form-group col-sm-12">
+	<div class="form-actions">
+    	<%= f.submit "Let's Go!", class: 'btn btn-default btn-block' %>
+    </div>
+</div>
+
+<% end %>
+
+<%= render "users/script_city_autocomplete" %>

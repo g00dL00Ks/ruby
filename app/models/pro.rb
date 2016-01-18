@@ -2,7 +2,7 @@ class Pro < ActiveRecord::Base
   has_attached_file :image, styles: { medium: "300x300>", thumb: "200x200>" }, :url =>':s3_domain_url',
   :path => '/:class/:attachment/:id_partition/:style/:filename'
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-  validates  :name, :last_name, presence: true
+  validates  :last_name, presence: true
   
   belongs_to :user
 
