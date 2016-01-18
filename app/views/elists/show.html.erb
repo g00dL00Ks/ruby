@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @elist.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @elist.email %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @elist.city %>
+</p>
+
+<%= link_to 'Edit', edit_elist_path(@elist) %> |
+<%= link_to 'Back', elists_path %>

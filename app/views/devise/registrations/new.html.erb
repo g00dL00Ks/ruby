@@ -9,8 +9,9 @@
                   <li class="base-title">Welcome! Join our network of experts</li>
                 </ul>
               </div>
-<p>Already created an account?  <%= render "devise/shared/links" %>
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<p>Already created an account?  <%= render "devise/shared/links" %></p>
+<p>Join as a consumer. <%= link_to "Get Notified", new_elist_path, "data-no-turbolink" => true %> when we launch.</p>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :class => "form-control" ) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -23,11 +24,11 @@
         </div>
  
     <%= f.input :name, required: true, autofocus: true %>
-    <%= f.input :email, required: true %>
     <%= f.input :city, required: true, input_html: {id: "locality"} %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
+    <%= f.input :email, required: true %>    
     <%= f.input :password, required: true, placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
 

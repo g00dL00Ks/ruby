@@ -1,0 +1,18 @@
+
+<div class="col-xs-4 col-sm-4 col-md-offset-1">
+<%= simple_form_for(@contact, :class => "form-control") do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, placeholder: "Your name*", label: '&nbsp;'.html_safe %>
+    <%= f.input :email, placeholder: "Your email address*", label: '&nbsp;'.html_safe  %>
+    <%= f.input :message, placeholder: "Your message*", label: '&nbsp;'.html_safe  %>
+  </div>
+
+	<br>
+	<div class="form-actions">
+    	<%= f.submit "Submit", class: 'f_bold btn btn-default btn-theme btn-lg' %>
+    </div>
+</div>
+<% end %>
+

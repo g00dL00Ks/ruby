@@ -1,19 +1,48 @@
-<h2>Change your password</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<section class="upcoming-evets">
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="base-container">
+              <div class="section-title">
+                <ul class="list-inline">
+                  <li class="base-title">Change your password</li>
+                </ul>
+              </div>
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }, :class => "form-control") do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :reset_password_token, as: :hidden %>
   <%= f.full_error :reset_password_token %>
 
   <div class="form-inputs">
+    <div class="row">   
+      <div class="col-xs-4 col-sm-4">
     <%= f.input :password, label: "New password", required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
+    <br>
   </div>
+  </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
-  </div>
+<div class="row">
+    <div class="col-xs-4 col-sm-4">
+    <div class="form-actions">
+        <%= f.submit "Change my password", class: 'f_bold btn btn-default btn-theme btn-lg' %>
+
+</div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
+
+<br>
+<br>
+
+
+</div>  
+    </div>
+    </div>
+</div>  
+</section>
+
