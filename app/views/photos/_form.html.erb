@@ -1,12 +1,18 @@
-<%= simple_form_for([@pro, @photo]) do |f| %>
+<div class="col-xs-4 col-sm-4">
+
+  <%= simple_form_for([@pro, @photo]) do |f| %>
 <%= f.error_notification %>
 
-
-   <%= f.input :photo, label: "Add a portfolio image", :as => :file%>
+      <div class="form-inputs">
+   <%= f.input :image, label: "Add a portfolio image", :as => :file %>
+        </div>
    <br>
 
+
   <div class="form-actions">
-    <%= f.submit "Save your image", class: 'f_bold btn btn-default btn-theme btn-lg' %>
-    </div>
+    <%= f.submit "Submit", class: 'f_bold btn btn-default btn-theme btn-lg' %>
+  </div>
 
 <% end %>
+
+</div>

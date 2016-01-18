@@ -22,6 +22,7 @@ class ProsController < ApplicationController
     @pro = Pro.new
     @pro.user_id = current_user.id
     @pro.services.build
+    @pro.photos.build
 
   end
 
@@ -91,6 +92,6 @@ class ProsController < ApplicationController
         :exec_coaching, :lifestyle_coaching, :public_speaking, :dating, :time_mgmt, :ADD_coaching, 
         :stress_mgmt, :parenting, :spirituality, :coach_bundle, :coach_other, :q_enjoy, :q_approach, :q_common,
         service_attributes: [:title, :description, :length, :price, :pro_id],
-        photo_attributes: [:image, :title])
+        photo_attributes: [:image, :title, :pro_id, :url, :path])
     end
 end

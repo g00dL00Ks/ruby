@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :contacts
 
   resources :pros do
-      resources :services
+      resources :services, :photos
   end
 
   get 'pages/home'
@@ -25,9 +25,9 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "registrations" }
 
-  resources :photos, only: [:new, :create, :index, :destroy]
+  #resources :photos, only: [:new, :create, :index, :destroy]
 
-  get 'photos/new'
+  #get 'photos/new'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

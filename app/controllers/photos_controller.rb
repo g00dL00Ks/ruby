@@ -7,22 +7,28 @@ class PhotosController < ApplicationController
   end
 
   def new
-    @photo = Photo.new
+    @pro = current_user.pro
+    @photo = @pro.photos.build
   end
 
   def create
-    @photo = Photo.new(photo_params)
-    if @photo.save
-      flash[:success] = "The photo was added!"
-      redirect_to pro_path(current_user.pro.id)
-    else
-      render 'new'
+    @pro = current_user.pro
+    @photo = @pro.photos.build
+    @photo.save
+    respond_to do |format|
+      if @photo.save
+        format.html { redirect_to pro_path(current_user.pro.id), alert: 'Photo was successfully Uploaded.' }
+        format.json { render :show, status: :created, location: @photo}
+      else
+        format.html { render :new }
+        format.json { render json: @photo.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   private
 
   def photo_params
-    params.require(:photo).permit(:image, :title, :pro_id)
+    params.require(:photo).permit(:image, :title, :pro_id, :url, :path)
   end
 end
