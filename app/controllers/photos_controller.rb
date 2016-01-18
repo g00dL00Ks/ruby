@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
-  #before_action :set_pro
+  before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :set_pro
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -7,13 +8,13 @@ class PhotosController < ApplicationController
   end
 
   def new
-    @pro = current_user.pro
-    @photo = @pro.photos.build
+    @photo = Photo.new
   end
 
   def create
-    @pro = current_user.pro
-    @photo = @pro.photos.build
+    @photo = Photo.new(photo_params)
+    @photo.pro_id = current_user.pro.id
+    Aws.use_bundled_cert!
     @photo.save
     respond_to do |format|
       if @photo.save
@@ -28,7 +29,15 @@ class PhotosController < ApplicationController
 
   private
 
+  def set_photo
+    @photo = Photo.find(params[:pro_id])
+  end
+
+  def set_pro
+    @pro = Pro.find(params[:pro_id])
+  end
+
   def photo_params
-    params.require(:photo).permit(:image, :title, :pro_id, :url, :path)
+    params.require(:photo).permit!
   end
 end

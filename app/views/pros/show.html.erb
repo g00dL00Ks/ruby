@@ -57,7 +57,7 @@
 							<h3>3. Add portfolio photos</h3>
 								<p>Add pictures of you and/or your work to give your clients a better understanding of your approach</p>	
 								<% @photos.each do |photo| %>
-    								<p><%= image_tag @photo.image.url(:thumb) %></p>
+    								<p><%= image_tag(photo.image.url(:thumb)) %></p>
 								<% end %>
 
                             <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
