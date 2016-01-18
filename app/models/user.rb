@@ -1,13 +1,16 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :pro, dependent: :destroy
+
+  has_one :pro, dependent: :destroy, autosave: true
+  accepts_nested_attributes_for :pro
 
   validates :name, :city, presence: true
 
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+         
 #Validation that the user selects an expertise
 # the logic works but two problems:
 # 1 - the alert message doesn't come up
