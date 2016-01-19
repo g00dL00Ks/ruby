@@ -46,6 +46,7 @@ about .jumbotron {
   -o-background-size: cover;
   background-size: cover;
  top: 50%;
+
 }
 
 about .carousel-caption { bottom: 40%;  }
@@ -59,6 +60,7 @@ mission .jumbotron {
   -o-background-size: cover;
   background-size: cover;
  top: 50%;
+  margin-bottom: 0px;
 }
 
 body {
@@ -876,7 +878,6 @@ table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .ta
 footer{
     background-color: #1b1e21;
     padding-top: 3%;
-    margin-top: 5%;
 
 }
 

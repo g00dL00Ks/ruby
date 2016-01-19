@@ -3,12 +3,16 @@
   <div class="container-fluid">
     <div class="carousel-caption">
       <div class="col-sm-6 col-md-7">
+       <% if user_signed_in? %>
+       <h2>Welcome back <%= current_user.name %>! </h2> 
+        <% end %>
+
         <h1>A NEW WAY TO SHINE<br>
           FROM THE INSIDE OUT.</h1>
         <p>GoodLooks connects you with high-quality, vetted experts<br>
           allowing you to look, feel, and be your best.<br>
-          We connect you for virtual or in-person sessions with:</p>
-          <uL>
+          Find an expert from our selection of:</p>
+          <ul>
 
             <li>Personal stylists</li>
             <li>Career and life coaches</li>
@@ -18,14 +22,13 @@
         </div>
 
 
-
   <% if user_signed_in? %>
-      <div class="col-sm-6 col-md-7">
-    <h3>Welcome back <%= current_user.name %>! </h3>   
+<div class="col-sm-6 col-md-5 be-the">  
   </div>
   <% else %>  
-<div class="col-sm-6 col-md-5 be-the">  
 <h3>Join our mailing list</h3>
+
+<div class="col-sm-6 col-md-5 be-the">  
  <%= render :partial => '/elists/hform' %>
   </div>
   <% end %>
@@ -35,6 +38,7 @@
 </div>
  </div>
 </div> 
+
 
 
 
