@@ -11,7 +11,16 @@
 
 
 <%= render 'form' %>
-<br><br>
+</div>
+<div class="row">
+<br>
+
+      <% if current_user.level == 2 %>
+        <%= link_to "Back to Profile Summary", pro_path(current_user.pro.id) %><br>
+      <% end %>
+      <br>
+
+
 </div>	
 </div>
 </div>

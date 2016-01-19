@@ -24,8 +24,8 @@
                             <ul class="dropdown-menu">
                                 <% if current_user.level == 2 %>
 
-                                <li><%= #link_to "Your profile", edit_pro_path(current_user.pro.id)
-                                #this is causing an error b/c the pro ID has not been created yet
+                                <li><%= link_to "Profile", edit_pro_path(current_user.pro.id)
+                                
                                  %></li>
                                 <% end %>
                                 <li><%= link_to "Account", edit_user_registration_path %></li>                                
