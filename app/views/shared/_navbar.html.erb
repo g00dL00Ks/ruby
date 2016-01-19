@@ -24,8 +24,7 @@
                             <ul class="dropdown-menu">
                                 <% if current_user.level == 2 %>
 
-                                <li><%= link_to "Profile", edit_pro_path(current_user.pro.id)
-                                
+                                <li><%= link_to "Profile", pro_path(current_user.pro.id)
                                  %></li>
                                 <% end %>
                                 <li><%= link_to "Account", edit_user_registration_path %></li>                                

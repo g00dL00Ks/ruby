@@ -41,7 +41,9 @@
     								<p>Description: <%= service.description %></p>
     								<p>Length: <%= service.length %> mins</p>
     								<p>Price: <%= number_to_currency(service.price) %></p>      
-    								<p><%= link_to 'Edit Service', edit_pro_service_path(service, current_user.pro.id) %></p>
+    								<p><%= link_to 'Edit  |  ', edit_pro_service_path(service, current_user.pro.id) %>
+                                    <%= # link_to 'Delete', pro_service_path(service, current_user.pro.id), method: :delete, data: { confirm: 'Are you sure?' } 
+                                    %> </p>
     								<br>
 								<% end %>
                             <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
@@ -70,9 +72,9 @@
 
 						<div class="row" style="padding: 5% 0%">
                         	<div class="col-sm-10 col-md-offset-1">
+                                <h3>Once you submit all your information to GoodLooks we will work with you to launch your complete profile page shortly!  </h3>
                                  <%= render :partial => '/pros/approval' %>
                         
-                                <h3>GoodLooks will be launching your complete profile page shortly!  You'll receive an email notification with the full details soon.</h3>
 							</div>
 						</div>
 </div>

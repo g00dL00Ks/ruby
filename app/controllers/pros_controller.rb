@@ -55,7 +55,7 @@ class ProsController < ApplicationController
     @pro.update(pro_params)
         respond_to do |format|
       if @pro.save
-        format.html { redirect_to pro_path(current_user.pro.id), notice: 'Thanks for updating your profile.  Update other info here if needed' }
+        format.html { redirect_to pro_path(current_user.pro.id), notice: 'Your information is saved' }
         format.json { render :show, status: :created, location: @pro }
       else
         format.html { render :new }
