@@ -36,19 +36,18 @@
 
                     <li>
                         <div class="btn-group">                            
-                            <button type="button" class="f_bold btn btn-default btn-nav-sign btn-lg">
-                              <li><%= link_to "Log-in/Register", new_user_registration_path, "data-no-turbolink" => true %></li>
-                            </button>                            
-                          </div>
+                       <%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+                          Expert Sign-up
+                        <% end %>    
                     </li>
 
                     <li>
                         <div class="btn-group">      
-                            <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
-                              <li><%= link_to "For Experts", pages_info_path, "data-no-turbolink" => true %></li>
-                            </button>
-</div>
-</li>
+                          <%= link_to pages_info_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+                          Info for Experts
+                          <% end %>                                
+                        </div>
+                    </li>
 
 
                             <% end %>                            

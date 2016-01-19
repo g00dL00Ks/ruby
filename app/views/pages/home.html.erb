@@ -64,10 +64,12 @@
 <p>We know that experts are not alweays available in your area. So we offer virtual services so you can access anyone from anywhere. Prefer to work, with someone in-person? We also have professionals that offer physical services in-home or in-public spaces.</p>
 </div>
 <div class="col-sm-12 col-md-12" align="center">
-	<button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
-    	<%= link_to "Sign-Up", new_user_registration_path, "data-no-turbolink" => true %>
-      </button>
+<%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+Sign-up
+<% end %>                                
 </div>
+
+
 
 </div>
 </div>
@@ -121,9 +123,10 @@ GoodLooks provides the inspiration and experts to help you achieve your personal
   <br>
     <h2>Are you are an expert?</h2>
     <p> Grow your clientele with GoodLooks</p>
-  <button type= "button" class="f_bold btn btn-default btn-theme btn-lg" >
-    <%= link_to "Learn more", pages_info_path, "data-no-turbolink" => true %>
-      </button>
+<%= link_to pages_info_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+Learn more
+<% end %> 
+
 </div>
 </div>
 </div>
@@ -146,9 +149,12 @@ Feeling your best looks good on you.</p>
 <h1>Tomorrow Is calling.  Own it.</h1>
 <br>
 <div class="col-sm-12 col-md-12" align="center">
-	<button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
-    	<%= link_to "Sign-Up", new_user_registration_path, "data-no-turbolink" => true %>
-      </button>
+
+  <%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+Sign-up
+<% end %>  
+
+
   </div>
 </div>
 </div>

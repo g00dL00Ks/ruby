@@ -53,9 +53,11 @@
 </div>
 
 <div class="col-sm-12 col-md-12" align="center">
-	<button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
-    	<%= link_to "Create your profile", new_user_registration_path, "data-no-turbolink" => true %>
-      </button>
+
+  <%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+Create your profile
+<% end %>  
+
   </div>
 
 </div>
@@ -138,9 +140,10 @@ We are committed to promoting and supporting our professionals though high quali
 </div>
 </div>
 <div class="col-sm-12 col-md-12" align="center">
-	<button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
-    	<%= link_to "Get Started!", new_user_registration_path, "data-no-turbolink" => true %>
-      </button>
+
+  <%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+Get started
+<% end %>  
 
   </div>
       <br>

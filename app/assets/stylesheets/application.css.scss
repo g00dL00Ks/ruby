@@ -60,7 +60,7 @@ mission .jumbotron {
   -o-background-size: cover;
   background-size: cover;
  top: 50%;
-  margin-bottom: 0px;
+  margin-bottom: 0px    ;
 }
 
 body {
@@ -210,7 +210,8 @@ header a {
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-}
+
+    }
 
 .btn-nav-sign:hover{
     background-color: #DCE4E6 !important;
@@ -220,7 +221,7 @@ header a {
 
 .btn-nav-sign-tran{
     background-color: transparent !important;
-    color: #fff !important;
+    color: #49a5b2 !important;
     border: solid 2px #fff !important;
     border-radius: 100px !important;
     padding-left: 35px !important;
@@ -244,10 +245,11 @@ header a {
   text-decoration: none;
  }
 
-  .btn-nav-sign a {
+
+.btn-nav-sign a {
  color: #49a5b2; 
  }
-
+  
 
 
 footer { background-color: #1b1e21; padding: 50px 0px 75px; }
