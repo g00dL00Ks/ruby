@@ -5,16 +5,32 @@
       <div class="col-sm-6 col-md-7">
         <h1>A NEW WAY TO SHINE<br>
           FROM THE INSIDE OUT.</h1>
-        <p>Launching in early 2016-GoodLooks is a marketplace<br>
-          of high-quality, vetted experts to help you look, feel,<br>
-          and be your best.</p>
+        <p>GoodLooks connects you with high-quality, vetted experts<br>
+          allowing you to look, feel, and be your best.<br>
+          We connect you for virtual or in-person sessions with:</p>
+          <uL>
+
+            <li>Personal stylists</li>
+            <li>Career and life coaches</li>
+            <li>Nutritionists</li>
+            <li>Personal trainers</li>
+          </ul>
         </div>
 
-<div class="col-sm-6 col-md-5 be-the">
 
-<h3>be the first in line</h3>
+
+  <% if user_signed_in? %>
+      <div class="col-sm-6 col-md-7">
+    <h3>Welcome back <%= current_user.name %>! </h3>   
+  </div>
+  <% else %>  
+<div class="col-sm-6 col-md-5 be-the">  
+<h3>Join our mailing list</h3>
  <%= render :partial => '/elists/hform' %>
   </div>
+  <% end %>
+
+
 
 </div>
  </div>
@@ -26,9 +42,7 @@
 <div class="container">
 <div class="row">
 <h2>The GoodLooks Experience</h2>
-	<% if user_signed_in? %>
-		<h2>Welcome <%= current_user.name %>! </h2>  	
-	<% end %>
+
 
 <div class="col-sm-4 col-md-4">
 <img src="https://s3-us-west-1.amazonaws.com/goodlooks/advice.png" alt="GoodLooks Expert Advice" class="img-responsive center">
@@ -69,8 +83,8 @@
 <div class="container">
 <div class="row">
 <h2>Why Use Goodlooks</h2>
-<p>Lorem lpsume is demo Font used for many porpuse. We used For our design you will like our design,ourworks.<br>
-We need more. We want to give you best service ever. I hope you will likeour hjob.</p>
+<p>Looking good starts from the inside out.  We are a community of like-minded users and experts who strive to be better.<br>
+GoodLooks provides the inspiration and experts to help you achieve your personal growth goals.</p>
 <div class="col-sm-12 col-md-12 photo"><img src="https://s3-us-west-1.amazonaws.com/goodlooks/photo.jpg" alt="Why use GoodLooks" class="img-responsive center"></div>
 
 <div class="col-sm-12 col-md-12 use-middle">
@@ -99,6 +113,14 @@ We need more. We want to give you best service ever. I hope you will likeour hjo
 </div>
 </div>
 
+<div class="col-sm-12 col-md-12 center">
+  <br>
+    <h2>Are you are an expert?</h2>
+    <p> Grow your clientele with GoodLooks</p>
+  <button type= "button" class="f_bold btn btn-default btn-theme btn-lg" >
+    <%= link_to "Learn more", pages_info_path, "data-no-turbolink" => true %>
+      </button>
+</div>
 </div>
 </div>
 </section>
@@ -118,6 +140,7 @@ Feeling your best looks good on you.</p>
 <div class="container">
 <div class="row">
 <h1>Tomorrow Is calling.  Own it.</h1>
+<br>
 <div class="col-sm-12 col-md-12" align="center">
 	<button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
     	<%= link_to "Sign-Up", new_user_registration_path, "data-no-turbolink" => true %>

@@ -17,8 +17,10 @@
                         <div class="btn-group">
                           <% if user_signed_in? %>
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-                                <b><%= current_user.name %></b>
+                                <span><b><%= current_user.name %></b></span>
                             </button>
+                          
+
                             <ul class="dropdown-menu">
                                 <% if current_user.level == 2 %>
 
@@ -31,9 +33,23 @@
                             </ul>
                             
                             <% else %>
+
+                    <li>
+                        <div class="btn-group">                            
+                            <button type="button" class="f_bold btn btn-default btn-nav-sign btn-lg">
+                              <li><%= link_to "Log-in/Register", new_user_registration_path, "data-no-turbolink" => true %></li>
+                            </button>                            
+                          </div>
+                    </li>
+
+                    <li>
+                        <div class="btn-group">      
                             <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
                               <li><%= link_to "For Experts", pages_info_path, "data-no-turbolink" => true %></li>
                             </button>
+</div>
+</li>
+
 
                             <% end %>                            
                         </div>
