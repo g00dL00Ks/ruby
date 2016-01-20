@@ -3,6 +3,8 @@ class PhotosController < ApplicationController
   before_action :set_pro
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
+  respond_to :html
+
   def index
     @photos = Photo.order('created_at')
   end
@@ -27,10 +29,16 @@ class PhotosController < ApplicationController
     end
   end
 
+  def destroy
+    Aws.use_bundled_cert!
+    @photo.destroy
+    respond_with(current_user.pro)
+  end
+
   private
 
   def set_photo
-    @photo = Photo.find(params[:pro_id])
+    @photo = Photo.find(params[:id])
   end
 
   def set_pro
