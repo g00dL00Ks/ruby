@@ -43,8 +43,8 @@
     								<p>Description: <%= service.description %></p>
     								<p>Length: <%= service.length %> mins</p>
     								<p>Price: <%= number_to_currency(service.price) %></p>      
-    								<p><%= link_to 'Edit  |  ', edit_pro_service_path(service, current_user.pro.id) %>
-                                    <%= # link_to 'Delete', pro_service_path(service, current_user.pro.id), method: :delete, data: { confirm: 'Are you sure?' } 
+    								<p><%= link_to 'Edit  |  ', edit_pro_service_path(current_user.pro.id, service) %>
+                    <%= link_to 'Delete', pro_service_path(current_user.pro.id, service), method: :delete, data: { confirm: 'Are you sure?' }
                                     %> </p>
     								<br>
 								<% end %>
@@ -64,6 +64,8 @@
 								<p>Add pictures of you and/or your work to give your clients a better understanding of your approach</p>	
 								<% @photos.each do |photo| %>
     								<p><%= image_tag(photo.image.url(:thumb)) %></p>
+                    <p><%= link_to 'Delete', pro_photo_path(current_user.pro.id, photo), method: :delete, data: { confirm: 'Are you sure?' }
+                    %></p>
 								<% end %>
 
                                 <%= link_to new_pro_photo_path(current_user.pro.id), "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>

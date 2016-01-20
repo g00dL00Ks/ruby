@@ -60,13 +60,13 @@ class ServicesController < ApplicationController
 
   def destroy
     @service.destroy
-    respond_with(@service)
+    respond_with(current_user.pro)
   end
 
   private
     def set_service
 
-      @service = Service.find(params[:pro_id])
+      @service = Service.find(params[:id])
     end
 
     def set_pro
