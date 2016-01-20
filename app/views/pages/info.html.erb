@@ -3,8 +3,13 @@
   <div class="container-fluid">
     <div class="carousel-caption">
       <div class="col-sm-6 col-md-7">
-        <h1>BROADEN YOUR CLIENT BASE</h1>
-        <p>Join our network of talented experts to grow your successful, high-powered, and motivated clientele</p>
+      	<br>
+      	<br>
+        <h1>BROADEN YOUR<br>CLIENT BASE</h1>
+        <p>Join our network of successful and motivated experts and grow your clientele</p>
+			<button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
+    			<%= link_to "Get started", new_user_registration_path, "data-no-turbolink" => true %>
+      		</button>        
       </div>
   </div>
 </div>
@@ -16,66 +21,91 @@
 <section id="experience">
 <div class="container">
 <div class="row">
-<h2>What is GoodLooks?</h2>
-<p>GoodLooks is marketplace of high-quality, vetted professionals that is transforming the way consumers access the experts to look, feel, and be their best.  Our platform offers the tools, resources, and services for users to interact with top experts for fitness, nutrition, style, and career advice.
+<h2>How it works</h2>
+<p>GoodLooks is marketplace of high-quality, vetted professionals that is transforming the way consumers access the experts to look, feel, and be their best.  We are looking for top experts to provide fitness, nutrition, style, career and life advice.
 <p>
 <div class="col-sm-4 col-md-4">
-<h3>ANSWERS &amp; ADVICE</h3>
-<p>Our "Ask an Expert" tool lets Users Submit their questions to specialists and community Want to keep Private? No problem-post anonymously. We're here to make it easy for you to access experts and receive custom-tailored, quality advice.</p>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-comments-o fa-stack-1x fa-inverse"></i>
+</span>
+<h3>CREATE YOUR PROFILE</h3>
+<p>Share with us a little about your expert services. Our team will contact you to finalize your free listing.</p>
 </div>
 
 <div class="col-sm-4 col-md-4">
-<h3>15 for $15</h3>
-<p>Users can book 15-minutes with any expert for $15, giving both clients and experts the opportunity to make sure it’s the right fit before committing to services.</p>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-tasks fa-stack-1x fa-inverse"></i>
+</span>
+<h3>CONNECT WITH CLIENTS</h3>
+<p>Interested clients contact you by asking questions or booking services, like our $15 for 15 virtual intro service. For longer appointments, you control the timing and pricing.</p>
 </div>
 
 <div class="col-sm-4 col-md-4">
-<h3>VIRTUAL &amp; IN-PERSON SESSIONS</h3>
-<p>We allow professionals to offer virtual and/or in-person services to work with the widest audience in the capacity they want.</p>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
+</span>
+
+<h3>WE HANDLE PAYMENTS</h3>
+<p>No more billing hassles! Clients pay through GoodLooks and we pay you via PayPal once the appointment is complete.</p>
 </div>
+
+<div class="col-sm-12 col-md-12" align="center">
+
+  <%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+Create your profile
+<% end %>  
+
+  </div>
 
 </div>
 </div>
 </section>
 
+<section id="promise_pro">
+<div class="container">
+<div class="row">
+<h2>Risk-free</h2>
+<p>Free to list your services</p>
+<p>Pay only upon client booking</p>
+<p>Build your business</p>
+</div>
+</div>
+</section>
 
-<section id="experience">
+
+<section id="why-use">
 <div class="container">
 <div class="row">
 <h2>Benefits of Joining GoodLooks</h2>
-
+<div class="col-sm-12 col-md-12 use-middle">
+<div class="col-sm-6 col-md-offset-1 col-md-5 box">
 <h3>NEW CLIENT ACCESS</h3>
-<p>GoodLooks is a destination for successful men and women who want to achieve their personal growth goals.  Over the coming months, GoodLooks will be relaunching our service ramping advertising, PR, and marketing efforts to expand our user base and grow your future clientele!
-</p><br><br>
-
-<h3>BUILD YOUR BRAND</h3>
-We are committed to promoting and supporting our professionals though high quality content creation, social media, and sponsored placement opportunities.  As an example, you can view a story secured in PopSugar, featuring one of our stylists working with a top editor.  Or check out videos and blog highlighting the expertise of our professional community.
-</p><br><br>
-
-<h3>EASY SCHEDULING &amp; PAYMENTS</h3>
-By offering customers the ability to book and pay for your services on our platform, we are making transacting easier than ever, ensuring payments occur in a secure environment.  Our two-way scheduling tools integrate with your calendar so consumers can easily and quickly reference your availability.  We accept all major credit cards and use PayPal to ensure you receive your payments in a timely manner.  It is low risk for you! We charge 5% for the service and only get paid when you get paid!
-</p><br><br>
-
-<h3>CONTROL YOUR BUSINESS</h3>
-You ultimately have the final say! We have professionals that offer virtual and/or in-person services, providing the flexibility of a wide-range of service offerings.  You have the ability to set your own pricing, manage your schedule and determine what clients you want to work with.  At GoodLooks our main goal is to promote your expertise to customers, better matching you with high-quality customer leads that will ultimately lead to more transactions!
-</p><br><br>
-
-</div>
-</div>
-</section>
-
-<section id="experience">
-<div class="container">
-<div class="row">
-<h2>Benefits of Joining GoodLooks</h2>
-
-<p>
-	Hear from some of our professionals: 
-1.	 “[GoodLooks] is one of the most amazing services that I feel everyone needs to know about!” —Jeni Elizabeth, Personal & Celebrity Stylist
-2.	“I really enjoyed being working with GoodLooks… and I loved being able to work with the women I met with. They were so great, open and receptive” —Daisy Swan, Career Coach
-3.	“XXXXX”—Kristie Jorfald, Personal Stylist
+<p>GoodLooks is a destination for successful men and women who want to achieve their personal growth goals.  Building on our success of personal styling, we are expanding to highlight career and life coaches, personal trainers, and nutritionists.  We will be expaning our presence with more advertising, PR, and marketing efforts. Get in on the ground floor to build your clientele.
 </p>
+</div>
 
+<div class="col-sm-6 col-md-offset-1 col-md-5 box">
+<h3>BUILD YOUR BRAND</h3>
+<p>
+We are committed to promoting and supporting our professionals though high quality content creation, social media, and sponsored placement opportunities.  As an example, you can view a story secured in PopSugar, featuring one of our stylists working with a top editor.  Or check out videos and blog highlighting the expertise of our professional community.
+</p>
+</div>
+
+<div class="col-sm-6 col-md-offset-1 col-md-5 box">
+<h3>EASY SCHEDULING &amp; PAYMENTS</h3>
+<p>By offering customers the ability to book and pay for your services on our platform, we are making transacting easier than ever, ensuring payments occur in a secure environment.  Our two-way scheduling tools integrate with your calendar so consumers can easily and quickly reference your availability.  We accept all major credit cards and use PayPal to ensure you receive your payments in a timely manner.  For these services, we charge 5% of your booking fee - and we only get paid when you get paid!
+</p>
+</div>
+
+<div class="col-sm-6 col-md-offset-1 col-md-5 box">
+<h3>CONTROL YOUR BUSINESS</h3>
+<p>You ultimately have the final say! We have professionals that offer virtual and/or in-person services, providing the flexibility of a wide-range of service offerings.  You have the ability to set your own pricing, manage your schedule and determine what clients you want to work with.  At GoodLooks our main goal is to promote your expertise to customers, better matching you with high-quality customer leads that will ultimately lead to more transactions!
+</p>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -90,9 +120,34 @@ You ultimately have the final say! We have professionals that offer virtual and/
 </div>
 </section>
 
+<section id="experience">
+<div class="container">
+<div class="row">
+<h2>Our Pros Love Working with GoodLooks</h2>
+	<div class="col-sm-6 col-md-offset-1 col-md-5 box">
+		<p><i class="fa fa-quote-left fa-fw"></i>
+			GoodLooks is one of the most amazing services that I feel everyone needs to know about! <i class="fa fa-quote-right fa-fw"></i>
+			<br>—Jeni Elizabeth, Personal &amp; Celebrity Stylist </p>
+		</div>
+
+	<div class="col-sm-6 col-md-offset-1 col-md-5 box">
+
+			<p><i class="fa fa-quote-left fa-fw"></i>
+				I really enjoyed being working with GoodLooks… and I loved being able to work with the women I met with. They were so great, open and receptive <i class="fa fa-quote-right fa-fw"></i>
+				<br>—Daisy Swan, Career Coach</p>
+	 </div>
+
 </div>
 </div>
-</div>
+<div class="col-sm-12 col-md-12" align="center">
+
+  <%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+Get started
+<% end %>  
+
+  </div>
+      <br>
+</section>
 </info>
 
 

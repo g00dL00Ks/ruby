@@ -4,20 +4,18 @@
             <div class="col-sm-12">
             	<div class ="center">
 <br>
-<h3><%= @pro.name %>, edit your profile information here</h3>
+<h3><%= current_user.name %>, edit your profile information here</h3>
 <h3>Be sure to save your work before leaving</h3>
 <br>	
 </div>
 <%= render 'form' %>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
 <br>
-            <%= link_to 'Update your email or password here', edit_user_registration_path %>
-        </div>
-        </div>
-        </div>
+      <% if current_user.level == 2 %>
+        <%= link_to "Back to Profile Summary", pro_path(current_user.pro.id) %><br>
+      <% end %>
+      <br>
+
 
 </div>
 </div>

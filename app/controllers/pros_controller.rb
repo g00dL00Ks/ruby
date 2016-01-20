@@ -1,6 +1,6 @@
 class ProsController < ApplicationController
   before_action :set_pro, only: [:show, :edit, :update, :destroy, :profile]
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :show]
 
 
   respond_to :html 
@@ -55,7 +55,7 @@ class ProsController < ApplicationController
     @pro.update(pro_params)
         respond_to do |format|
       if @pro.save
-        format.html { redirect_to pro_path(current_user.pro.id), notice: 'Thanks for updating your profile.  Update other info here if needed' }
+        format.html { redirect_to pro_path(current_user.pro.id), notice: 'Your information is saved' }
         format.json { render :show, status: :created, location: @pro }
       else
         format.html { render :new }
@@ -90,7 +90,7 @@ class ProsController < ApplicationController
         :trainer_other, :nutrition_analysis, :meal_planning, :food_sensitivity, :grocery, :pantry, 
         :supplement, :body_comp, :nutritionist_bundle, :nutritionist_other, :transition, :interview, 
         :exec_coaching, :lifestyle_coaching, :public_speaking, :dating, :time_mgmt, :ADD_coaching, 
-        :stress_mgmt, :parenting, :spirituality, :coach_bundle, :coach_other, :q_enjoy, :q_approach, :q_common,
+        :stress_mgmt, :parenting, :spirituality, :coach_bundle, :coach_other, :q_enjoy, :q_approach, :q_common, :review,
         service_attributes: [:title, :description, :length, :price, :pro_id],
         photo_attributes: [:image, :title])
     end

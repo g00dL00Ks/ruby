@@ -4,15 +4,15 @@
 
   <div class="form-inputs">
     <div class="form-group col-sm-6">
-    <%= f.input :name, placeholder: "Your name*", label: '&nbsp;'.html_safe, :input_html => {style: 'height:64px;'} %>
+    <%= f.input :name, placeholder: "Your name*", label: false, :input_html => {style: 'height:64px;'} %>
     </div>
 
     <div class="form-group col-sm-6">
-    <%= f.input :email, placeholder: "Your email*", label: '&nbsp;'.html_safe, :input_html => {style: 'height:64px;'}  %>
+    <%= f.input :email, placeholder: "Your email*", label: false, :input_html => {style: 'height:64px;'}  %>
     </div>
 
     <div class="form-group col-sm-12">
-    <%= f.input :city, input_html: {id: "locality"}, placeholder: "Your city*", label: '&nbsp;'.html_safe%>
+    <%= f.input :city, input_html: {id: "locality"}, placeholder: "Your city*", label: false %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>

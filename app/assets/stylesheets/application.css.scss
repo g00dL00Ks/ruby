@@ -17,14 +17,50 @@
 }
 
 home .jumbotron {
-  background-image: url('https://s3-us-west-1.amazonaws.com/goodlooks/Jumbo1.jpg');
+  background-image: url('https://s3-us-west-1.amazonaws.com/goodlooks/site/home_f.jpg');
   min-height: 800px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
 info .jumbotron {
-  background-image: url('https://s3-us-west-1.amazonaws.com/goodlooks/site/iStock_000023077780_Medium.jpg');
+  background-image: url('https://s3-us-west-1.amazonaws.com/goodlooks/site/pro3.jpg');
   min-height: 800px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ top: 50%;
+}
+
+
+
+about .jumbotron {
+  background-image: url('https://s3-us-west-1.amazonaws.com/goodlooks/site/about.jpg');
+  min-height: 800px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ top: 50%;
+
+}
+
+about .carousel-caption { bottom: 40%;  }
+
+
+mission .jumbotron {
+  background-image: url('https://s3-us-west-1.amazonaws.com/goodlooks/site/mission_3.jpg');
+  min-height: 800px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ top: 50%;
+  margin-bottom: 0px    ;
 }
 
 body {
@@ -32,7 +68,7 @@ body {
 }
 
 p {
-    font-size: 16px !important;
+    font-size: 22px !important;
     padding: 0px !important;
 }
 .col-md-3:nth-child(3n+1) {
@@ -105,6 +141,9 @@ h4 {
 
 .form-group {
     margin-bottom: 0px !important;
+    margin-top: 0px;
+    padding-top: 0px !important;
+    line-height: 1.0;
 }
 
 .fm {
@@ -158,6 +197,60 @@ header a {
     color: white;
     }
 
+.btn-nav-sign {
+    background-color: white !important;
+    color: #fff !important;
+    border-style: solid !important;
+    border-color: #49a5b2;
+    border-radius: 100px !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+    }
+
+.btn-nav-sign:hover{
+    background-color: #DCE4E6 !important;
+    text-decoration: none !important; 
+}
+
+
+.btn-nav-sign-tran{
+    background-color: transparent !important;
+    color: #49a5b2 !important;
+    border: solid 2px #fff !important;
+    border-radius: 100px !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    padding: 7px 40px !important;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.btn-nav-sign-tran:hover{
+    background-color: #DCE4E6 !important;
+    text-decoration: none !important; 
+}
+
+
+.btn-nav-sign a:hover {
+  color: #49a5b2; 
+  text-decoration: none;
+ }
+
+
+.btn-nav-sign a {
+ color: #49a5b2; 
+ }
+ 
+  
 
 
 footer { background-color: #1b1e21; padding: 50px 0px 75px; }
@@ -180,13 +273,14 @@ footer a {
  color: #6f7070 ;
  }
 
+.carousel-caption li {margin-left: 30px; font-size: 22px;}
 .carousel-caption { color: #fff; left: 7%; right: 7%; bottom: 10%; text-align: left; text-shadow: none; }
 .carousel-caption h1 { color: #fff; font-family: "Brandon-bold"; font-size: 60px; text-transform: uppercase; }
 .carousel-caption h3 { color: #fff; font-family: "Brandon-light"; font-size: 28px; margin: 100px 0px 38px; text-align: center; text-transform: uppercase; }
-.carousel-caption p { color: #fff; font-family: "Brandon-light"; font-size: 28px; line-height: normal; }
+
 .carousel-indicators li { border: 2px solid #fff; height: 20px; width: 20px; }
 .carousel-indicators .active { background-color: #dfe2e2; height: 21px; width: 21px; }
-.carousel-caption .form-group { padding: 0px 8px; margin-bottom: 26px; }
+
 .carousel-caption input[type="text"] { border: none; border-radius: 40px; box-shadow: inset 0px 1px 2px rgba(0,0,0,0.15); color: #555555; font-family: "Brandon-light"; font-size: 16px; height: 64px; text-indent: 8%; }
 .carousel-caption .btn-default { background-color: #61bfcc; border: 1px solid #ccc; border-radius: 40px; box-shadow: inset 0px 1px 2px rgba(0,0,0,0.15); color: #fff; font-family: "Brandon-Light"; font-size: 16px; height: 64px; text-transform: uppercase; }
 
@@ -194,14 +288,14 @@ footer a {
 #experience { padding: 60px 0px 48px; text-align: center; width: 100%; }
 #experience h2 { color: #1B1E21; font-family: "Brandon-bold"; font-size: 36px; margin: 0px 0px 35px; }
 #experience h3  { background: url("https://s3-us-west-1.amazonaws.com/goodlooks/line.png") no-repeat bottom center; color: #1B1E21; font-family: "Brandon-bold"; font-size: 28px; margin: 38px 0px 30px; padding-bottom: 32px; text-transform: uppercase; }
-#experience p { font-family: "Brandon-light"; font-size: 16px; margin: 0px 4.5% 25px; }
+#experience p { font-family: "Brandon-light"; font-size: 22px; margin: 0px 4.5% 25px; }
 #experience .btn-sign, #tomorrow .btn-sign { background-color: #61bfcc; box-shadow: 0px 0px 2px rgba(0,0,0,0.6), inset 1px 1px 1px rgba(0,0,0,0.15); border-radius: 40px; color: #fff; font-family: "Brandon-light"; font-size: 16px; height: 60px; margin-top: 50px; text-transform: uppercase; width: 265px; }
 #experience .btn-sign:hover, #experience .btn-sign:focus, #tomorrow .btn-sign:hover, #tomorrow .btn-sign:focus { background-color: #28C1D7; color: #fff; outline: none; }
 
 #terms { padding: 60px 0px 48px; text-align: left; width: 100%; }
 #terms h2 { color: #1B1E21; font-family: "Brandon-bold"; font-size: 36px; margin: 0px 0px 35px; }
 #terms h3  { background: url("https://s3-us-west-1.amazonaws.com/goodlooks/line.png") no-repeat bottom center; color: #1B1E21; font-family: "Brandon-bold"; font-size: 28px; margin: 38px 0px 30px; padding-bottom: 32px; text-transform: uppercase; text-align: center; }
-#terms p { font-family: "Brandon-light"; font-size: 16px; margin: 0px 4.5% 25px; }
+#terms p { font-family: "Brandon-light"; font-size: 22px; margin: 0px 4.5% 25px; }
 #terms li { font-family: "Brandon-light"; font-size: 16px; margin: 0px 4.5% 25px; margin-left: 80px; }
 #terms .btn-sign, #tomorrow .btn-sign { background-color: #61bfcc; box-shadow: 0px 0px 2px rgba(0,0,0,0.6), inset 1px 1px 1px rgba(0,0,0,0.15); border-radius: 40px; color: #fff; font-family: "Brandon-light"; font-size: 16px; height: 60px; margin-top: 50px; text-transform: uppercase; width: 265px; }
 #terms .btn-sign:hover, #experience .btn-sign:focus, #tomorrow .btn-sign:hover, #tomorrow .btn-sign:focus { background-color: #28C1D7; color: #fff; outline: none; }
@@ -212,23 +306,68 @@ footer a {
 #why-use { padding: 38px 0px; width: 100%; }
 #why-use .photo { margin-top: 50px; text-align: center; }
 #why-use h2 { color: #1B1E21; font-family: "Brandon-bold"; font-size: 36px; margin: 0px 0px 11px; text-align: center; }
-#why-use p { font-family: "Brandon-light"; font-size: 16px; margin-bottom: 15px; text-align: center; }
+#why-use p { font-family: "Brandon-light"; font-size: 22px; margin-bottom: 15px; text-align: center; }
 #why-use .use-middle { clear: both; float: none; margin: 0px auto; }
 #why-use .box { margin-top: 65px; }
 #why-use .box h3 { font-family: "Brandon-bold"; font-size: 28px; margin: 15px 0px 12px; text-transform: uppercase; }
-#why-use .box p { font-family: "Brandon-light"; font-size: 16px; text-align: left; }
+#why-use .box p { font-family: "Brandon-light"; font-size: 22px; text-align: left; }
 #why-use .number { background: url("https://s3-us-west-1.amazonaws.com/goodlooks/line.png") no-repeat center center; width: 126px; }
 #why-use .number h5 { background-color: #fff; color: #61bfcc; font-family: "Brandon-bold"; font-size: 16px; margin: 0px auto; text-align: center; width: 17px; }
 
 #promise { background: url("https://s3-us-west-1.amazonaws.com/goodlooks/promise.jpg") no-repeat top center / cover; color: #fff; min-height: 265px; padding: 40px 0px; text-align: center; width: 100%; }
 #promise h2 { color: #fff; font-family: "Brandon-bold"; font-size: 36px; }
-#promise p { color: #fff; font-family: "Brandon-light"; font-size: 16px; }
+#promise p { color: #fff; font-family: "Brandon-light"; font-size: 22px; }
 
 #tomorrow { padding: 76px 0px 66px; width: 100%; }
 #tomorrow h1 { font-family: "Brandon-bold"; font-size: 48px; margin: 0px; text-align: center; text-transform: uppercase; }
 #tomorrow .btn-sign { margin-top: 25px; }
 
+#promise_pro { background: url("https://s3-us-west-1.amazonaws.com/goodlooks/site/pro_promise3.jpg") no-repeat top center / cover; color: #fff; min-height: 265px; padding: 40px 0px; text-align: center; width: 100%; }
 
+#promise_pro p {color: black;}
+
+/* Mission Section */
+.mission {
+    background-position: center;
+    background: url("https://s3-us-west-1.amazonaws.com/goodlooks/site/mission_1.jpg");
+    background-size: cover;
+}
+
+.mission .container {
+    width: 100%
+}
+
+
+.section-bg-color {
+    background-color: #fff;
+    height: 100%;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.section-bg-color h3, .section-bg-color h4 {
+    margin-left: 25px;
+    margin-right: 25px
+}
+
+.rght {
+    text-align: right;
+}
+
+.mission2 {
+    background-position: left;
+    background: url("https://s3-us-west-1.amazonaws.com/goodlooks/site/mission_2.jpg");
+    background-size: cover;
+    margin-top: 0;
+}
+
+.mission2 .container {
+    width: 100%
+}
+
+.carousel-caption2 { color: black; left: 7%; right: 7%; bottom: 10%; text-align: left; text-shadow: none; padding-top: 5s0px; }
+.carousel-caption2 h1 { color: black; font-family: "Brandon-bold"; font-size: 60px; text-transform: uppercase; text-align: center; }
+.carousel-caption2 h3 { color: black; font-family: "Brandon-light"; font-size: 28px; margin: 100px 0px 38px; text-align: center; text-transform: uppercase; }
 
 
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,footer,header,hgroup,menu,nav,section,menu,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}article,aside,figure,footer,header,hgroup,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted #000;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
@@ -742,7 +881,6 @@ table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .ta
 footer{
     background-color: #1b1e21;
     padding-top: 3%;
-    margin-top: 5%;
 
 }
 

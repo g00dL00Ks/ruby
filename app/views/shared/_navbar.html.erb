@@ -19,11 +19,12 @@
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
                                 <b><%= current_user.name %></b>
                             </button>
+                          
+
                             <ul class="dropdown-menu">
                                 <% if current_user.level == 2 %>
 
-                                <li><%= #link_to "Your profile", edit_pro_path(current_user.pro.id)
-                                #this is causing an error b/c the pro ID has not been created yet
+                                <li><%= link_to "Profile", pro_path(current_user.pro.id)
                                  %></li>
                                 <% end %>
                                 <li><%= link_to "Account", edit_user_registration_path %></li>                                
@@ -31,9 +32,22 @@
                             </ul>
                             
                             <% else %>
-                            <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
-                              <li><%= link_to "For Experts", pages_info_path, "data-no-turbolink" => true %></li>
-                            </button>
+
+                    <li>
+                        <div class="btn-group">                            
+                       <%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+                          Expert Sign-up
+                        <% end %>    
+                    </li>
+
+                    <li>
+                        <div class="btn-group">      
+                          <%= link_to pages_info_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+                          Info for Experts
+                          <% end %>                                
+                        </div>
+                    </li>
+
 
                             <% end %>                            
                         </div>

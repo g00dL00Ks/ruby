@@ -16,18 +16,20 @@
                     </div>		
 
                     <div class="col-sm-12 center">
-                        <h2>There are three steps to building your profile</h2>
+                        <h2>3 steps to building your profile</h2>
+                        <br>
+
                     </div>
-                    <div class="row" style="padding: 5% 0%">
-            	    <p id="notice"><%= notice %></p>
-                </div>
+
 
                     <div class="row">                    
                     <div class="col-sm-10">
-                                <h3>1. Build your profile</h3>
-                            <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
-                              <%= link_to "Edit Profile info", edit_pro_path(current_user.pro.id), "data-no-turbolink" => true %>
-                            </button>
+                                <h3>1. Share your expertise</h3>
+                            <p>Add your information.  A complete a profile helps users better find you.</p>                            
+                            <%= link_to edit_pro_path(current_user.pro.id), "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+                            Edit your info
+                            <% end %> 
+
                             <br><br>
                         </div>
                     </div>
@@ -41,12 +43,16 @@
     								<p>Description: <%= service.description %></p>
     								<p>Length: <%= service.length %> mins</p>
     								<p>Price: <%= number_to_currency(service.price) %></p>      
-    								<p><%= link_to 'Edit Service', edit_pro_service_path(service, current_user.pro.id) %></p>
+    								<p><%= link_to 'Edit  |  ', edit_pro_service_path(service, current_user.pro.id) %>
+                                    <%= # link_to 'Delete', pro_service_path(service, current_user.pro.id), method: :delete, data: { confirm: 'Are you sure?' } 
+                                    %> </p>
     								<br>
 								<% end %>
-                            <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
-                               <%= link_to "Add a service", new_pro_service_path(current_user.pro.id), "data-no-turbolink" => true %>
-                            </button>
+                                <%= link_to new_pro_service_path(current_user.pro.id), "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+                                Add a service
+                                <% end %> 
+
+
                                 <br> <br>                           
                         </div>
                     </div>
@@ -60,9 +66,11 @@
     								<p><%= image_tag(photo.image.url(:thumb)) %></p>
 								<% end %>
 
-                            <button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
-                               <%= link_to "Add a photo", new_pro_photo_path(current_user.pro.id), "data-no-turbolink" => true %>
-                            </button>
+                                <%= link_to new_pro_photo_path(current_user.pro.id), "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+                                Add a photo
+                                <% end %> 
+
+
                                 <br>                            
                         </div>
                     </div>
@@ -70,8 +78,9 @@
 
 						<div class="row" style="padding: 5% 0%">
                         	<div class="col-sm-10 col-md-offset-1">
-<br><br>                        		
-								<h3>GoodLooks will be launching your complete profile page shortly!  You'll receive an email notification with the full details soon.</h3>
+                                <h3>Once you submit all your information to GoodLooks we will work with you to launch your complete profile page shortly!  </h3>
+                                 <%= render :partial => '/pros/approval' %>
+                        
 							</div>
 						</div>
 </div>

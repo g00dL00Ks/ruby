@@ -1,0 +1,15 @@
+
+            <%= simple_form_for(@pro, :class => "form-control") do |f| %>
+            <%= f.error_notification %>
+
+  
+    <%= f.input :review, :as => :boolean , label: "Check here when you're ready to have the GoodLooks team review your profile.  If you want to come back to finish the questions, leave this button unchecked." %>           
+<br>    
+  <div class="form-actions">
+    <%= f.submit "Submit for approval", class: 'f_bold btn btn-default btn-theme btn-lg black' %>
+    </div>
+                
+
+<% end %>
+</div>
+</div>
