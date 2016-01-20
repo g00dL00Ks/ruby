@@ -28,14 +28,14 @@
 
 
                         <div class="row">
-                            <div class="col-xs-4 col-sm-4">
+                            <div class="col-xs-12 col-sm-4">
                                 <%= f.input :name, label: "What is your first name?"%>
                                 <%= f.input :last_name, label: "What is your last name?" %>    
                                 <%= f.input :hometown, placeholder: "What is your hometown (city, state)?" %>  
                              </div>
 
 
-                            <div class="col-xs-4 col-sm-4 col-md-offset-2">
+                            <div class="col-xs-12 col-sm-4 col-md-offset-2">
                                 <%= f.input :quote, placeholder: "What is your favorite quote?" %>  
                                 <%= f.input :author, placeholder: "Who said it?" %>    
                                 <%= f.input :tip, placeholder: "What's your best tip to clients?" %>   
@@ -54,13 +54,13 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-xs-4 col-sm-4">
+                            <div class="col-xs-12 col-sm-4">
                                 <%= f.input :description, placeholder: "Provide a description of your services" %>
                                 <%= f.input :certifications, placeholder: "What certifications do you have that are relevant to the services you provide?" %>
                                 <%= f.input :specialty, placeholder: "What do you consider to be your speciality?" %>
                              </div>
 
-                            <div class="col-xs-4 col-sm-4 col-md-offset-1">
+                            <div class="col-xs-12 col-sm-4 col-md-offset-1">
                                 <%= f.input :pre_work, label: "What type of pre-work do you request your client’s complete in advance of their sessions? " %>
                                 <%= f.input :cancellation, label: "What is your cancellation policy (fees charged, time windows to cancel)?" %>
                         <br>                                 
@@ -69,14 +69,14 @@
 
                         <div class="row">                            
                             <p class ="fm">How are you willing to work with your clientele?</p>
-                                <div class="col-xs-3 col-sm-3">
+                                <div class="col-xs-6 col-sm-3">
                                     <p><b>In-Person</b></p>
                                     <%= f.input :loc_inperson_private, :as => :boolean , label: "In client's private space" %>
                                     <%= f.input :loc_inperson_public, :as => :boolean , label: "In a public space" %>
                                     <%= f.input :loc_inperson_yourspace, :as => :boolean , label: "In your office" %>
                                 </div>
 
-                                <div class="col-xs-3 col-sm-3">
+                                <div class="col-xs-6 col-sm-3">
                                     <p><b>Virtual</b></p>
                                     <%= f.input :loc_virtual_short, :as => :boolean , label: "Virtual (video chat, phone, text message)- short duration (<30-minute sessions)" %>
                                     <%= f.input :loc_virtual_long, :as => :boolean , label: "Virtual (video chat, phone, text message)- long duration (>30-minute sessions)" %>
@@ -84,7 +84,7 @@
                             </div>
 
                         <div class="row"> 
-                            <div class="col-xs-8 col-sm-8">
+                            <div class="col-xs-12 col-sm-8">
                             <br>                            
                             <p class ="fm">Please answer a few questions about your approach</p>
                                 <%= f.input :q_enjoy, label: "#1. What do you enjoy most about your line of work?" %>
@@ -103,7 +103,7 @@
                             </ul>
                         </div>
                         <div class="row">                        
-                            <div class="col-xs-4 col-sm-4">
+                            <div class="col-xs-12 col-sm-4">
                                 <p class="fm">Add social accounts for your profile. Those left blank will not be included. </p>
                                 <%= f.input :instagram_handle, label: "What is your Instagram user name? Do not include the @ sign", placeholder: "user_name" %>    
                                 <%= f.input :pinterest_link, label: "What is your Pinterest link?", placeholder: "https://www.pinterest.com/YOUR_NAME/" %>    
@@ -117,7 +117,7 @@
                                 <%= f.input :linkedin_page, label: "What is your LinkedIn page?", placeholder: "https://www.linkedin.com/in/YOUR_NAME" %>
                             </div>     
 
-                            <div class="col-xs-4 col-sm-4 col-md-offset-2"> 
+                            <div class="col-xs-12 col-sm-4 col-md-offset-2"> 
                             <p class="fm">Please add payment information</p>                           
                                 <%= f.input :paypal_email, label: "Paypal Email:" %>
                                 <%= f.input :phone, label: "Phone Number:" %>
@@ -140,7 +140,7 @@
 
                          <p><b>Provide additional details about the services you provide.  This helps users better search and find you!</p></b><br>
                          <div class="row">    
-                                <div class="col-xs-4 col-sm-4">
+                                <div class="col-xs-6 col-sm-4">
                                     <p class ="fm">What is your typical client  base?</p>
                                         <%= f.input :everyday, :as => :boolean , label: "Everyday" %>
                                         <%= f.input :execs, :as => :boolean , label: "Executives/ High Profile Professionals" %>
@@ -155,7 +155,7 @@
                                         <%= f.input :lgbt, :as => :boolean , label: "LGBT" %>
                                 </div>
 
-                                <div class="col-xs-4 col-sm-4 col-md-offset-2"> 
+                                <div class="col-xs-6 col-sm-4 col-md-offset-2"> 
                                     <p class="fm">What is the typical age range of your clientele?</p>
                                         <%= f.input :age_und20, :as => :boolean , label: "Under 20 years of age" %>
                                         <%= f.input :age_20_30, :as => :boolean , label: "20-30 year olds" %>
@@ -170,14 +170,14 @@
                             <% if current_user.stylist? %>
                                 <p><b>Tell us about your styling expertise.  Check all that apply.</p></b>
                                 <div class="row">    
-                                    <div class="col-xs-4 col-sm-4">
+                                    <div class="col-xs-6 col-sm-4">
                                         <%= f.input :closet, :as => :boolean , label: "Closet cleanout / refresh" %>
                                         <%= f.input :personal_styling, :as => :boolean , label: "Personal styling (accompanied shopping or private purchases)" %>
                                         <%= f.input :stylist_other, label: "Other (please specify):" %>
                                     </div>
 
 
-                                    <div class="col-xs-4 col-sm-4">
+                                    <div class="col-xs-6 col-sm-4">
                                         <%= f.input :personal_shopping, :as => :boolean , label: "Personal shopping" %>
                                         <%= f.input :commercial, :as => :boolean , label: "Commercial (editorial, film/tv, advertising, etc)" %>
                                         <%= f.input :bundle_offers, :as => :boolean , label: "Bundle offers / custom packages" %>
@@ -189,7 +189,7 @@
                                     <br>
                                     <p><b>Tell us about your training expertise. Check all that apply.</p></b>
                                 <div class="row"> 
-                                    <div class="col-xs-4 col-sm-4">                                    
+                                    <div class="col-xs-6 col-sm-4">                                    
                                     <%= f.input :weight_loss, :as => :boolean , label: "Weight Loss" %>
                                     <%= f.input :weight_gain, :as => :boolean , label: "Weight Gain" %>
                                     <%= f.input :firming, :as => :boolean , label: "Firming/Toning" %>
@@ -198,7 +198,7 @@
                                     <%= f.input :endurance, :as => :boolean , label: "Endurance Training / Athletes & Marathon Training" %>
                                     <%= f.input :trainer_other, label: "Other" %>
                                     </div>
-                                    <div class="col-xs-4 col-sm-4">                                    
+                                    <div class="col-xs-6 col-sm-4">                                    
                                     <%= f.input :trainer_prenatal, :as => :boolean , label: "Prenatal / Postnatal Training" %>
                                     <%= f.input :recovery, :as => :boolean , label: "Recovery from illness/ injury" %>
                                     <%= f.input :nutrition_planning, :as => :boolean , label: "Nutrition Planning" %>
@@ -213,7 +213,7 @@
                                     <br>
                                     <p class="fm">Tell us about your nutrition expertise.  Check all that apply.</p>
                                     <div class="row">
-                                    <div class="col-xs-4 col-sm-4">                                    
+                                    <div class="col-xs-6 col-sm-4">                                    
                                             <%= f.input :nutrition_analysis, :as => :boolean , label: "Nutritional analysis" %>
                                             <%= f.input :meal_planning, :as => :boolean , label: "Meal Planning / Diet guidelines" %>
                                             <%= f.input :food_sensitivity, :as => :boolean , label: "Food Sensitivity Testing" %>
@@ -221,7 +221,7 @@
                                             <%= f.input :nutritionist_other, label: "Other (please specify):" %>
                                     </div>
 
-                                    <div class="col-xs-4 col-sm-4">   
+                                    <div class="col-xs-6 col-sm-4">   
                                         <%= f.input :pantry, :as => :boolean , label: "Pantry Makeover" %>
                                         <%= f.input :supplement, :as => :boolean , label: "Supplement Recommendation" %>
                                         <%= f.input :body_comp, :as => :boolean , label: "Body Composition Testing" %>
@@ -234,7 +234,7 @@
                                     <br>
                                     <p class="fm">Tell us about your career and life coaching expertise.  Check all that apply.</p>
                                 <div class="row">
-                                        <div class="col-xs-4 col-sm-4">      
+                                        <div class="col-xs-6 col-sm-4">      
                                             <%= f.input :transition, :as => :boolean , label: "Career Transition (new job, change jobs, return after absence, etc)" %>
                                             <%= f.input :interview, :as => :boolean , label: "Interview / Resume Coaching" %>
                                             <%= f.input :exec_coaching, :as => :boolean , label: "Executive Coaching / Leadership & Development" %>
@@ -244,7 +244,7 @@
                                             <%= f.input :coach_other, label: "Other (please specify):" %>
                                         </div>
 
-                                        <div class="col-xs-4 col-sm-4">  
+                                        <div class="col-xs-6 col-sm-4">  
                                             <%= f.input :time_mgmt, :as => :boolean , label: "Time Management / Productivity" %>
                                             <%= f.input :ADD_coaching, :as => :boolean , label: "ADD Coaching" %>
                                             <%= f.input :stress_mgmt, :as => :boolean , label: "Stress Management" %>
