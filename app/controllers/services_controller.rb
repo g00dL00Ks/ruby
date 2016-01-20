@@ -21,9 +21,9 @@ class ServicesController < ApplicationController
 
   def new
     @service = Service.new
-
-   # @services = Service.where(pro_id: @current_user.pro.id).order("created_at DESC")    
-
+  #this code works if we want to show services
+  # @services = Service.where(pro_id: @pro.id).order("created_at DESC")
+  
 
   end
 

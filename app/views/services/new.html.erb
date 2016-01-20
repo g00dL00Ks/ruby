@@ -13,9 +13,143 @@
 
 <%= render 'form' %>
 
-<div class="col-xs-4 col-sm-4 col-md-offset-2">
+<div class="col-xs-6 col-sm-6 col-md-offset-1">
+<h3>Reminder you’ve stated you offer the following services:</h3>
+<p>
+<% if @pro.nutrition_analysis? %>
+Nutritional analysis<br>
+<% end %>
+<% if @pro.meal_planning? %>
+Meal Planning / Diet guidelines<br>
+<% end %>
+<% if @pro.food_sensitivity? %>
+Food Sensitivity Testing<br>
+<% end %>
+<% if @pro.grocery? %>
+Grocery Store Tour<br>
+<% end %>
+<% if @pro.pantry? %>
+Pantry Makeover<br>
+<% end %>
+<% if @pro.supplement? %>
+Supplement Recommendation<br>
+<% end %>
+<% if @pro.body_comp? %>
+Body Composition Testing<br>
+<% end %>
+<% if @pro.nutritionist_bundle? %>
+Bundle offers / custom packages<br>
+<% end %>
+<% if @pro.nutritionist_other? %>
+Custom:  <%= @pro.nutritionist_other %> <br>
+<% end %>
+<% if @pro.nutrition_analysis? %>
+<% if @pro.closet? %>
+Closet cleanout / refresh<br>
+<% end %>
+<% if @pro.personal_styling? %>
+Personal styling (accompanied shopping or private purchases)<br>
+<% end %>
+<% if @pro.personal_shopping? %>
+Personal shopping<br>
+<% end %>
+<% if @pro.commercial? %>
+Commercial (editorial, film/tv, advertising, etc)<br>
+<% end %>
+<% if @pro.bundle_offers? %>
+Bundle offers / custom packages<br>
+<% end %>
+<% if @pro.stylist_other? %>
+<%= @pro.stylist_other %><br>
+<% end %>
+<% if @pro.weight_loss? %>
+Weight Loss<br>
+<% end %>
+<% if @pro.weight_gain? %>
+Weight Gain<br>
+<% end %>
+<% if @pro.firming? %>
+Firming/Toning<br>
+<% end %>
+<% if @pro.bootcamp? %>
+Bootcamp Style Training<br>
+<% end %>
+<% if @pro.bodybuilding? %>
+Bodybuilding<br>
+<% end %>
+<% if @pro.endurance? %>
+Endurance Training / Athletes & Marathon Training<br>
+<% end %>
+<% if @pro.trainer_prenatal? %>
+Prenatal / Postnatal Training<br>
+<% end %>
+<% if @pro.recovery? %>
+Recovery from illness/ injury<br>
+<% end %>
+<% if @pro.nutrition_planning? %>
+Nutrition Planning<br>
+<% end %>
+<% if @pro.yoga? %>
+Yoga<br>
+<% end %>
+<% if @pro.pilates? %>
+Pilates<br>
+<% end %>
+<% if @pro.trainer_bundle? %>
+Bundle offers / custom packages<br>
+<% end %>
+<% if @pro.trainer_other? %>
+<%= @pro.trainer_other %><br>
+<% end %>
+<% if @pro.transition? %>
+Career Transition (new job, change jobs, return after absence, etc)<br>
+<% end %>
+<% if @pro.interview? %>
+Interview / Resume Coaching<br>
+<% end %>
+<% if @pro.exec_coaching? %>
+Executive Coaching / Leadership & Development<br>
+<% end %>
+<% if @pro.lifestyle_coaching? %>
+Lifestyle Coaching<br>
+<% end %>
+<% if @pro.public_speaking? %>
+Public Speaking / Communication / Networking<br>
+<% end %>
+<% if @pro.dating? %>
+Dating & Relationship<br>
+<% end %>
+<% if @pro.time_mgmt? %>
+Time Management / Productivity<br>
+<% end %>
+<% if @pro.ADD_coaching? %>
+ADD Coaching<br>
+<% end %>
+<% if @pro.stress_mgmt? %>
+Stress Management<br>
+<% end %>
+<% if @pro.parenting? %>
+Parenting Coaching<br>
+<% end %>
+<% if @pro.spirituality? %>
+Spirtuality<br>
+<% end %>
+<% if @pro.coach_bundle? %>
+Bundle offers / custom packages<br>
+<% end %>
+<% if @pro.coach_other? %>
+<%= @pro.coach_other %><br>
+<% end %>
 
-<img src="https://s3-us-west-1.amazonaws.com/goodlooks/site/Services.jpg" alt="GoodLooks Add a service" class="img-responsive center">
+
+<p>
+<br>
+<h3>Tips to create a great listing:</h3>
+<p>Use a descriptive title</p>
+<p>Give a clear description of what your client can expect</p>
+<p>Provide clear pricing.  Clients want to know what to expect</p>
+
+
 </div>
 
 </div>

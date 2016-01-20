@@ -7,9 +7,9 @@
       	<br>
         <h1>BROADEN YOUR<br>CLIENT BASE</h1>
         <p>Join our network of successful and motivated experts to grow your clientele</p>
-			<button type="button" class="f_bold btn btn-default btn-theme btn-lg" >
-    			<%= link_to "Get started", new_user_registration_path, "data-no-turbolink" => true %>
-      		</button>        
+<%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+Get Started
+<% end %> 
       </div>
   </div>
 </div>
@@ -32,7 +32,7 @@
   <i class="fa fa-comments-o fa-stack-1x fa-inverse"></i>
 </span>
 <h3>CREATE YOUR PROFILE</h3>
-<p>Share with us a little about your expert services. Our team will contact you to finalize your free listing.</p>
+<p>Share with us a little about your expert services and apply today.  Our team will review your application and contact you to finalize your free listing.</p>
 </div>
 
 <div class="col-sm-4 col-md-4">
@@ -41,7 +41,7 @@
   <i class="fa fa-tasks fa-stack-1x fa-inverse"></i>
 </span>
 <h3>CONNECT WITH CLIENTS</h3>
-<p>Interested clients contact you by asking questions or booking services, like our $15 for 15 virtual intro service. For longer appointments, you control the timing and pricing.</p>
+<p>Book new clients for virtual and in-person services from your profile page.  Make a great first impression through our $15 for 15 program allowing clients to book 15 minutes with any GoodLooks expert for $15.</p>
 </div>
 
 <div class="col-sm-4 col-md-4">
@@ -56,8 +56,8 @@
 
 <div class="col-sm-12 col-md-12" align="center">
 
-  <%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
-Create your profile
+<%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+Create Your Profile
 <% end %>  
 
   </div>
@@ -103,7 +103,7 @@ We are committed to promoting and supporting our professionals though high quali
 </div>
 
 <div class="col-sm-6 col-md-offset-1 col-md-5 box">
-<h3>CONTROL YOUR BUSINESS</h3>
+<h3>VIRTUAL OR IN-PERSON SERVICES</h3>
 <p>You ultimately have the final say! We have professionals that offer virtual and/or in-person services, providing the flexibility of a wide-range of service offerings.  You have the ability to set your own pricing, manage your schedule and determine what clients you want to work with.  At GoodLooks our main goal is to promote your expertise to customers, better matching you with high-quality customer leads that will ultimately lead to more transactions!
 </p>
 </div>
@@ -142,9 +142,8 @@ We are committed to promoting and supporting our professionals though high quali
 </div>
 </div>
 <div class="col-sm-12 col-md-12" align="center">
-
-  <%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
-Get started
+<%= link_to new_user_registration_path, "data-no-turbolink" => true, class: 'f_bold btn btn-default btn-theme btn-lg' do %>
+Get Started
 <% end %>  
 
   </div>
