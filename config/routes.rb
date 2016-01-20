@@ -12,14 +12,14 @@ Rails.application.routes.draw do
 
   get 'pages/home'
 
-  get 'pages/about'
-  get 'pages/confirm'
-  get 'pages/mission'
-  get 'pages/info'
-  get 'pages/terms'
-  get 'pages/privacy'
+  get 'InfoForExperts', :to => 'pages#info', :as => :info
+  get 'Mission', :to => 'pages#mission', :as => :mission
+  get 'About', :to => 'pages#about', :as => :about
+  get 'Privacy', :to => 'pages#privacy', :as => :privacy
+  get 'Terms', :to => 'pages#terms', :as => :terms
 
-  
+  get 'my_page_here ', :to => 'home#index'
+
   get 'pros/profile'
 
   root 'pages#home'
