@@ -16,6 +16,10 @@
     src: font-url('BrandonGrotesque-Light.otf') format('opentype');
 }
 
+body {
+    padding-top: 90px!important;
+}
+
 home .jumbotron {
   background-image: url('https://s3-us-west-1.amazonaws.com/goodlooks/site/home_f.jpg');
   min-height: 800px;
@@ -23,6 +27,7 @@ home .jumbotron {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  position: relative;
 }
 
 
@@ -152,6 +157,22 @@ h4 {
     font-weight: bold;
 }
 
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 35px;
+    height: 2px;
+    border-radius: 1px;
+    background: rgba(0,0,0,0.6);
+}
+.navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 6px;
+}
+.navbar-toggle {
+    margin-top: 0;
+    margin-right: 0;
+}
+
+
 header .btn-sign:hover, header .btn-sign:focus { 
     background-color: #28C1D7; 
     color: #fff; 
@@ -183,6 +204,10 @@ header a {
   color: white; 
   text-decoration: none;
  }
+ .btn-loggedin {
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+}
 
   .btn-theme a {
  color: white; 
@@ -199,7 +224,7 @@ header a {
 
 .btn-nav-sign {
     background-color: white !important;
-    color: #fff !important;
+    color: #49a5b2 !important;
     border-style: solid !important;
     border-color: #49a5b2;
     border-radius: 100px !important;
@@ -276,12 +301,12 @@ footer a {
 .carousel-caption li {margin-left: 30px; font-size: 22px;}
 .carousel-caption { color: #fff; left: 7%; right: 7%; bottom: 10%; text-align: left; text-shadow: none; }
 .carousel-caption h1 { color: #fff; font-family: "Brandon-bold"; font-size: 60px; text-transform: uppercase; }
-.carousel-caption h3 { color: #fff; font-family: "Brandon-light"; font-size: 28px; margin: 100px 0px 38px; text-align: center; text-transform: uppercase; }
+.carousel-caption h3 { color: #fff; font-family: "Brandon-light"; font-size: 28px; margin: 90px 0px 38px; text-align: center; text-transform: uppercase; }
 
 .carousel-indicators li { border: 2px solid #fff; height: 20px; width: 20px; }
 .carousel-indicators .active { background-color: #dfe2e2; height: 21px; width: 21px; }
 
-.carousel-caption input[type="text"] { border: none; border-radius: 40px; box-shadow: inset 0px 1px 2px rgba(0,0,0,0.15); color: #555555; font-family: "Brandon-light"; font-size: 16px; height: 64px; text-indent: 8%; }
+.carousel-caption input[type="text"], .carousel-caption input[type="email"] { border: none; border-radius: 40px; box-shadow: inset 0px 1px 2px rgba(0,0,0,0.15); color: #555555; font-family: "Brandon-light"; font-size: 16px; height: 64px; text-indent: 8%; }
 .carousel-caption .btn-default { background-color: #61bfcc; border: 1px solid #ccc; border-radius: 40px; box-shadow: inset 0px 1px 2px rgba(0,0,0,0.15); color: #fff; font-family: "Brandon-Light"; font-size: 16px; height: 64px; text-transform: uppercase; }
 
 
@@ -417,6 +442,11 @@ header .logo-pro:hover{
     text-decoration: underline #e2f86d solid;
 }
 
+header .navbar-brand {
+    padding: 8px 15px;
+    margin-left: 0!important;
+}
+
 header .btn-group .btn{
     border-radius: 50px;
     padding: 7px 8px;
@@ -514,8 +544,8 @@ header .dropdown-menu > li > a:hover, header .dropdown-menu > li > a:focus {
     text-decoration: none;
     padding: 8px 20px;
     background-color: transparent;
-    border-bottom: solid 3px #e2f86d;
-    border-color:  #e2f86d;
+    border-bottom: solid 3px #fff;
+    border-color:  #fff;
 
 }
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
@@ -581,7 +611,7 @@ input[type="checkbox"] {
     .carousel-caption h1 { font-size: 30px; }
     .carousel-caption h3 { font-size: 18px; }
     .carousel-caption p { font-size: 18px; }
-    .carousel-caption input[type="text"], .carousel-caption .btn-default { height: 45px; }
+    .carousel-caption input[type="text"], .carousel-caption input[type="email"], .carousel-caption .btn-default { height: 45px; }
     #tomorrow h1 { font-size: 45px; }
 }
 
@@ -590,7 +620,7 @@ input[type="checkbox"] {
     .carousel-caption h1 { font-size: 44px; }
     .carousel-caption h3 { font-size: 23px; }
     .carousel-caption p { font-size: 23px; }
-    .carousel-caption input[type="text"], .carousel-caption .btn-default { height: 45px; }
+    .carousel-caption input[type="text"], .carousel-caption input[type="email"], .carousel-caption .btn-default { height: 45px; }
     #experience h3{ font-size: 26px; }
     #experience p { margin: 0px; }
 }
@@ -700,7 +730,7 @@ table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .ta
 .btn-theme {
     background-color: #61bfcc !important;
     color: #fff !important;
-    border: none !important;
+    border: 1px solid #49a5b2 !important;
     border-radius: 100px !important;
     padding-left: 35px !important;
     padding-right: 35px !important;
@@ -794,6 +824,7 @@ table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .ta
 
     .tab_section .nav-tabs > li > a {
         padding:12px 25px;
+        margin-left: 0;
     }
 
     .tab_section .nav-tabs > li > a:hover {
@@ -1373,4 +1404,101 @@ sk_topics .row{
 
 .find_expert_sec p{
     color: #61bfcc;
+}
+
+
+.alert-wrap {
+    position: relative;
+}
+.alert-wrap .alert {
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    top: 10px;
+}
+.alert-wrap .alert-dismissable .close, .alert-wrap .alert-dismissible .close {
+    right: 0;
+    top: 0;
+}
+
+/*== Responsive Fixes ==*/
+
+@media (max-width: 1199px) {
+    home .jumbotron {
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 991px) {
+    /*== Navbar collapse on tablets  ==*/
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+    header .btn-group .btn {
+        margin: 5px 0;
+    }
+
+    .carousel-caption h3 {
+        margin-top: 60px;
+    }
+    home .jumbotron {
+        min-height: 550px;
+    }
+    .carousel-caption {
+        bottom: 0%;
+    }
+}
+
+@media (max-width: 767px) {
+    .alert {
+        padding: 10px;
+        font-size: 16px;
+    }
+    .carousel-caption h1 {
+        font-size: 18px!important;
+        margin-bottom:10px;
+    }
+    footer {
+        text-align: center;
+    }
+    footer .container {
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
 }
