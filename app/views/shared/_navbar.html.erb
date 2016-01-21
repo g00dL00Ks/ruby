@@ -19,7 +19,7 @@
       <ul class="nav navbar-nav list-unstyled list-inline navbar-right">
         
                           <% if user_signed_in? %>
-                          <li>
+                          <li class="visible-lg visible-md hidden-sm hidden-xs">
                         <!-- User button -->
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle btn-loggedin" data-toggle="dropdown" aria-haspopup="true">
@@ -38,6 +38,20 @@
                             </ul>
                             </div>
                             </li>
+
+                            <% if current_user.level == 2 %>
+                            <li class="hidden-lg hidden-md visible-sm visible-xs loggedin">
+                              <%= link_to "Profile", pro_path(current_user.pro.id)
+                                 %>
+                            </li>
+                            <li class="hidden-lg hidden-md visible-sm visible-xs loggedin">
+                              <%= link_to "Account", edit_user_registration_path %>
+                            </li>
+                            <li class="hidden-lg hidden-md visible-sm visible-xs loggedin">
+                              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+                            </li>
+
+                            <% end %>
                             
                             <% else %>
 
