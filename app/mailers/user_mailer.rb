@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
  
   def welcome_email(user)
     @user = user
-    @url  = 'http://insider.goodlooks.me/users/sign_in'
+    @url  = 'http://experts.goodlooks.me/users/sign_in'
     mail(to: @user.email, subject: 'Welcome to GoodLooks')
   end
 
