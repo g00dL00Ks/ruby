@@ -9,7 +9,7 @@
                   <li class="base-title">Welcome! Join our network of experts</li>
                 </ul>
               </div>
-<p>Already created an account?  <%= render "devise/shared/links" %></p>
+<p>Already have an account?  <%= render "devise/shared/links" %></p>
 <p>Join as a consumer. <%= link_to "Get Notified", new_elist_path, "data-no-turbolink" => true %> when we launch.</p>
 <% resource.build_pro if resource.pro.nil? %>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :class => "form-control" ) do |f| %>
