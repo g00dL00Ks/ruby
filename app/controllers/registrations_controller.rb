@@ -22,7 +22,7 @@ before_filter :configure_permitted_parameters
 
   def after_sign_up_path_for(resource)
     @user.level = current_user.level
-    # UserMailer.welcome_email(@user).deliver
+    UserMailer.welcome_email(@user).deliver_now
     if @user.level == 2
     #	new_pro_path
     pro_path(current_user.pro.id)
