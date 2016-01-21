@@ -11,11 +11,10 @@ class ProsController < ApplicationController
   end
 
   def show
- 
+
    @services = Service.where(pro_id: @pro.id).order("created_at DESC")
 
    @photos = Photo.where(pro_id: @pro.id).order("created_at DESC")
-
    end
 
   def new
@@ -62,7 +61,7 @@ class ProsController < ApplicationController
         format.json { render json: @pro.errors, status: :unprocessable_entity }    
       end
       end 
-            end 
+ end 
 
   def destroy
     @pro.destroy

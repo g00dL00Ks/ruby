@@ -1,0 +1,29 @@
+<section class="tab_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+            	<br>
+
+<div class="row">
+<h3><%= current_user.name %>, add photos your profile page</h3>
+ 	
+<br>
+
+
+<%= render 'form' %>
+</div>
+<div class="row">
+<br>
+
+      <% if current_user.level == 2 %>
+        <%= link_to "Back to Profile Summary", pro_path(current_user.pro.id) %><br>
+      <% end %>
+      <br>
+
+
+</div>	
+</div>
+</div>
+</div>
+
+</section>

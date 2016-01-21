@@ -13,6 +13,11 @@ class PhotosController < ApplicationController
     @photo = Photo.new
   end
 
+
+  def edit
+
+  end
+
   def create
     @photo = Photo.new(photo_params)
     @photo.pro_id = current_user.pro.id
@@ -22,6 +27,19 @@ class PhotosController < ApplicationController
       if @photo.save
         format.html { redirect_to pro_path(current_user.pro.id), alert: 'Photo was successfully Uploaded.' }
         format.json { render :show, status: :created, location: @photo}
+      else
+        format.html { render :new }
+        format.json { render json: @photo.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    @photo.update(photo_params)
+    respond_to do |format|
+      if @photo.save
+        format.html { redirect_to pro_path(current_user.pro.id), alert: 'Photo was successfully updated.' }
+        format.json { render :show, status: :created, location: @service}
       else
         format.html { render :new }
         format.json { render json: @photo.errors, status: :unprocessable_entity }
