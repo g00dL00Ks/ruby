@@ -6,14 +6,17 @@
 
 <div class="row">
 <% if user_signed_in? %>
+<div class="col-sm-12">
 <h3><%= current_user.name %>, add a service to your profile</h3>
 	<p>Please add 2-4 service packages that you offer.  Our customers like to understand what will be involved in booking with you.</p>
 <% end %>	 	
+</div>
 <br>
 
 <%= render 'form' %>
 
-<div class="col-xs-6 col-sm-6 col-md-offset-1">
+<div class="col-sm-6 col-md-5 col-md-offset-1">
+<br>
 <h3>Reminder you’ve stated you offer the following services:</h3>
 <p>
 <% if @pro.nutrition_analysis? %>

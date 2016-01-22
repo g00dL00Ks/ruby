@@ -39,6 +39,7 @@ info .jumbotron {
   -o-background-size: cover;
   background-size: cover;
  top: 50%;
+ position: relative;
 }
 
 
@@ -51,10 +52,9 @@ about .jumbotron {
   -o-background-size: cover;
   background-size: cover;
  top: 50%;
+ position: relative;
 
 }
-
-about .carousel-caption { bottom: 40%;  }
 
 
 mission .jumbotron {
@@ -65,7 +65,9 @@ mission .jumbotron {
   -o-background-size: cover;
   background-size: cover;
  top: 50%;
-  margin-bottom: 0px    ;
+  margin-bottom: 0px;
+  position: relative;
+  background-position: 50% 0;
 }
 
 body {
@@ -306,8 +308,8 @@ footer a {
 .carousel-indicators li { border: 2px solid #fff; height: 20px; width: 20px; }
 .carousel-indicators .active { background-color: #dfe2e2; height: 21px; width: 21px; }
 
-.carousel-caption input[type="text"], .carousel-caption input[type="email"] { border: none; border-radius: 40px; box-shadow: inset 0px 1px 2px rgba(0,0,0,0.15); color: #555555; font-family: "Brandon-light"; font-size: 16px; height: 64px; text-indent: 8%; }
-.carousel-caption .btn-default { background-color: #61bfcc; border: 1px solid #ccc; border-radius: 40px; box-shadow: inset 0px 1px 2px rgba(0,0,0,0.15); color: #fff; font-family: "Brandon-Light"; font-size: 16px; height: 64px; text-transform: uppercase; }
+.carousel-caption input[type="text"], .carousel-caption input[type="email"], .carousel-caption input[type="submit"] { border: none; border-radius: 40px; box-shadow: inset 0px 1px 2px rgba(0,0,0,0.15); color: #555555; font-family: "Brandon-light"; font-size: 16px; height: 64px; text-indent: 8%; }
+.carousel-caption input[type="submit"] { background-color: #61bfcc; border: 1px solid #ccc; border-radius: 40px; box-shadow: inset 0px 1px 2px rgba(0,0,0,0.15); color: #fff; font-family: "Brandon-Light"; font-size: 16px; text-transform: uppercase; }
 
 
 #experience { padding: 60px 0px 48px; text-align: center; width: 100%; }
@@ -356,6 +358,7 @@ footer a {
     background-position: center;
     background: url("https://s3-us-west-1.amazonaws.com/goodlooks/site/mission_1.jpg");
     background-size: cover;
+    background-position-x: 50%;
 }
 
 .mission .container {
@@ -445,6 +448,9 @@ header .logo-pro:hover{
 header .navbar-brand {
     padding: 8px 15px;
     margin-left: 0!important;
+}
+header .navbar-brand img {
+    max-width: 210px;
 }
 
 header .btn-group .btn{
@@ -611,7 +617,7 @@ input[type="checkbox"] {
     .carousel-caption h1 { font-size: 30px; }
     .carousel-caption h3 { font-size: 18px; }
     .carousel-caption p { font-size: 18px; }
-    .carousel-caption input[type="text"], .carousel-caption input[type="email"], .carousel-caption .btn-default { height: 45px; }
+    .carousel-caption input[type="text"], .carousel-caption input[type="email"], .carousel-caption input[type="submit"] { height: 45px; }
     #tomorrow h1 { font-size: 45px; }
 }
 
@@ -620,7 +626,7 @@ input[type="checkbox"] {
     .carousel-caption h1 { font-size: 44px; }
     .carousel-caption h3 { font-size: 23px; }
     .carousel-caption p { font-size: 23px; }
-    .carousel-caption input[type="text"], .carousel-caption input[type="email"], .carousel-caption .btn-default { height: 45px; }
+    .carousel-caption input[type="text"], .carousel-caption input[type="email"], .carousel-caption input[type="submit"] { height: 45px; }
     #experience h3{ font-size: 26px; }
     #experience p { margin: 0px; }
 }
@@ -964,10 +970,6 @@ footer .footer-title{
     footer ul li a{
         margin: 5px 0px;
 
-    }
-
-    footer ul li{
-        text-align: center !important;
     }
 }
 
@@ -1420,12 +1422,29 @@ sk_topics .row{
     right: 0;
     top: 0;
 }
+.loggedin a {
+    color: #333;
+    font-size: 14px;
+}
+.loggedin a:hover, .loggedin a:focus {
+    color: #000;
+    background: transparent!important;
+}
 
 /*== Responsive Fixes ==*/
 
 @media (max-width: 1199px) {
     home .jumbotron {
         min-height: 600px;
+    }
+    .mission2 .carousel-caption2 h1 {
+        font-size: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    about .jumbotron .carousel-caption{
+        bottom: 40%;
     }
 }
 
@@ -1474,14 +1493,37 @@ sk_topics .row{
         margin: 5px 0;
     }
 
-    .carousel-caption h3 {
+    home .carousel-caption h3 {
         margin-top: 60px;
     }
     home .jumbotron {
         min-height: 550px;
+        background-position-x: 80%;
     }
-    .carousel-caption {
+    info .jumbotron, about .jumbotron {
+        min-height: 550px;
+    }
+    home .carousel-caption {
         bottom: 0%;
+    }
+    about .jumbotron {
+        background-position: 100px 0;
+    }
+    .mission .section-bg-color, .mission2 .section-bg-color {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin-top: 500px;
+    }
+    .mission, .mission2 {
+        background-size: auto 750px;
+        background-position: 0 -20px;
+    }
+    mission .jumbotron {
+        min-height: 500px;
+        padding-top: 670px;
+        background-size: auto 670px;
+        background-repeat: no-repeat;
+        background-position: 0 -50px;
     }
 }
 
@@ -1490,9 +1532,16 @@ sk_topics .row{
         padding: 10px;
         font-size: 16px;
     }
-    .carousel-caption h1 {
+    home .carousel-caption h1 {
         font-size: 18px!important;
         margin-bottom:10px;
+    }
+    info .jumbotron {
+        background-position-x: 50%;
+    }
+    about .jumbotron {
+        background-size: initial;
+        background-position: 0;
     }
     footer {
         text-align: center;
@@ -1500,5 +1549,47 @@ sk_topics .row{
     footer .container {
         padding-top: 10px;
         padding-bottom: 15px;
+    }
+    footer ul {
+        margin-bottom: 30px;
+    }
+    .mission, .mission2 {
+        background-size: auto 592px;
+        background-position: 0 -20px;
+    }
+    .mission2 {
+        background-position: -120px -0px;
+    }
+    .mission .section-bg-color, .mission2 .section-bg-color {
+        margin-top: 360px;
+    }
+    mission .jumbotron {
+        padding-top: 510px;
+        background-size: auto 515px;
+    }
+    mission .jumbotron .carousel-caption2 h1 {
+        font-size: 30px;
+    }
+    mission .jumbotron .carousel-caption2 h3 {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    .mission .section-bg-color h4, .mission2 .section-bg-color h4  {
+        font-size: 14px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media (max-width: 479px) {
+    .mission, .mission2 {
+        background-size: auto 480px;
+    }
+    .mission .section-bg-color, .mission2 .section-bg-color {
+        margin-top: 320px;
+    }
+    mission .jumbotron {
+        padding-top: 370px;
+        background-size: auto 360px;
+        background-position: -20px -20px;
     }
 }
