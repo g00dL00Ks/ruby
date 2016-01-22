@@ -8,8 +8,8 @@
                         <div class="col-sm-12">
                             <div class="section-title">
 
-                              <% flash.each do |key, value| %>
-                                  <div class="alert alert-<%= key %>"><%= value %></div>
+
+                                  <div class="alert alert-success"><%= flash[:approval] %></div>
                               <% end %>
 
                                 <ul class="list-inline">
