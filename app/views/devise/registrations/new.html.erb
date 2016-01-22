@@ -28,9 +28,9 @@
  
     <%= f.input :name, required: true, autofocus: true, :label => 'First name' %>
 
-  <%= f.simple_fields_for :pro do |pro| %>
+    <%= f.simple_fields_for :pro do |pro| %>
       <%= pro.input :last_name, :label => 'Last name' %>      
-  <% end %>
+    <% end %>
 
     <%= f.input :city, required: true, input_html: {id: "locality"} %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -40,8 +40,7 @@
     <%= f.input :password, required: true, placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
 
-    <%= #f.select :level, options_for_select([['user', 1], ['pro', 2], ['admin', 3]]), prompt: "What's your type"
-    %>
+
  </div>
 
   <div class="col-xs-4 col-sm-4 col-md-offset-2">
@@ -50,6 +49,9 @@
               <li class="f_bold">Please select your area of expertise</li>
           </ul>
         </div>
+         
+    <% # This section should only show for people who are registering as pros.
+    %>    
     <%= f.input :trainer, :as => :boolean, label: "Personal Training" %>
     <%= f.input :stylist, :as => :boolean, label: "Personal Fashion Stylist" %>
     <%= f.input :dietician, :as => :boolean , label: "Dietician " %>

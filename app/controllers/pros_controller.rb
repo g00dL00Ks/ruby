@@ -41,7 +41,7 @@ class ProsController < ApplicationController
     @pro.user_id = current_user.id
     respond_to do |format|
       if @pro.save
-        format.html { redirect_to pro_path(current_user.pro.id), notice: 'Thanks for saving your.  Please complete the remainder of your profile' }
+        format.html { redirect_to pro_path(current_user.pro.id), notice: 'Your information has been saved.' }
         format.json { render :show, status: :created, location: @pro }
       else
         format.html { render :new }
@@ -54,7 +54,7 @@ class ProsController < ApplicationController
     @pro.update(pro_params)
         respond_to do |format|
       if @pro.save
-        flash[:success] = "Submitted for approval!"
+        flash[:success] = "Information saved."
         format.html { redirect_to pro_path(current_user.pro.id) }
         format.json { render :show, status: :created, location: @pro }
       else

@@ -18,8 +18,6 @@ Rails.application.routes.draw do
   get 'Privacy', :to => 'pages#privacy', :as => :privacy
   get 'Terms', :to => 'pages#terms', :as => :terms
 
-  get 'my_page_here ', :to => 'home#index'
-
   get 'pros/profile'
 
   root 'pages#home'
