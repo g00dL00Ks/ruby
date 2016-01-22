@@ -54,7 +54,8 @@ class ProsController < ApplicationController
     @pro.update(pro_params)
         respond_to do |format|
       if @pro.save
-        format.html { redirect_to pro_path(current_user.pro.id), notice: 'Your information is saved' }
+        flash[:success] = "Submitted for approval!"
+        format.html { redirect_to pro_path(current_user.pro.id) }
         format.json { render :show, status: :created, location: @pro }
       else
         format.html { render :new }
