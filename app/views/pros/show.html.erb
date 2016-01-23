@@ -8,9 +8,9 @@
                         <div class="col-sm-12">
                             <div class="section-title">
 
-
-                                  <div class="alert alert-success"><%= flash[:approval] %></div>
-                              <% end %>
+                  <%if flash[:updated] %>
+                    <div class="alert alert-success"><%= flash[:updated] %></div>
+                  <%end%>
 
                                 <ul class="list-inline">
 									<li class="base-title"><%= current_user.name %>'s profile </li>
