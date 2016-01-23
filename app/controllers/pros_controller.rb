@@ -51,10 +51,15 @@ class ProsController < ApplicationController
   end
 
   def update
+    Aws.use_bundled_cert!
     @pro.update(pro_params)
         respond_to do |format|
       if @pro.save
-        flash[:success] = "Information saved."
+        if pro_params[:review] == "1"
+          flash[:updated] = "Submitted for approval!"
+        else
+          flash[:updated] = "Profile Updated"
+        end
         format.html { redirect_to pro_path(current_user.pro.id) }
         format.json { render :show, status: :created, location: @pro }
       else

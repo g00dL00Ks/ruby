@@ -8,9 +8,9 @@
                         <div class="col-sm-12">
                             <div class="section-title">
 
-                              <% flash.each do |key, value| %>
-                                  <div class="alert alert-<%= key %>"><%= value %></div>
-                              <% end %>
+                  <%if flash[:updated] %>
+                    <div class="alert alert-success"><%= flash[:updated] %></div>
+                  <%end%>
 
                                 <ul class="list-inline">
 									<li class="base-title"><%= current_user.name %>'s profile </li>
