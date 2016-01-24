@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 	
   def home
   	@pro = Pro.all
-  	  @elist = Elist.new
+  	@elist = Elist.new
   end
 
   def about
