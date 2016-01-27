@@ -8,7 +8,12 @@ RailsAdmin.config do |config|
   # end
   # config.current_user_method(&:current_user)
 
-
+config.authorize_with do
+    authenticate_or_request_with_http_basic('Login required') do |username, password|
+      username == Rails.application.secrets.user &&
+      password == Rails.application.secrets.password
+    end
+  end
 
   ## == Cancan ==
   # config.authorize_with :cancan
