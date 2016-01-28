@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117234748) do
+ActiveRecord::Schema.define(version: 20160128213147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20160117234748) do
     t.text     "pinterest_link"
     t.text     "linkedin_page"
     t.string   "paypal_email"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "alt_email"
     t.boolean  "loc_inperson_private"
     t.boolean  "loc_inperson_public"
